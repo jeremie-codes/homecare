@@ -10,22 +10,13 @@ class Rapport extends Model
     use HasFactory;
 
     protected $fillable = [
-        'mission_id', 'auteur_id', 'cible_id',
-        'type', 'message', 'statut'
+        'user_id',
+        'type',
+        'description',
     ];
 
-    public function mission()
-    {
-        return $this->belongsTo(Mission::class);
-    }
-
-    public function auteur()
+    public function user()
     {
         return $this->belongsTo(User::class, 'auteur_id');
-    }
-
-    public function cible()
-    {
-        return $this->belongsTo(User::class, 'cible_id');
     }
 }

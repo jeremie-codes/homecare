@@ -10,8 +10,8 @@ class Agent extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'type', 'experience', 'disponibilite',
-        'tarif_horaire', 'adresse', 'statut'
+        'user_id', 'service_id', 'type', 'experience', 'disponibilite', 'adresse', 'statut', 'is_recommended', 'rating',
+        'is_badges', 'recommended_at', 'recommended_by'
     ];
 
     public function user()
@@ -19,14 +19,15 @@ class Agent extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function missions()
+    public function service()
     {
-        return $this->hasMany(Mission::class);
+        return $this->belongsTo(Service::class);
     }
 
     public function evaluations()
     {
         return $this->hasMany(Evaluation::class);
     }
+    
 }
 

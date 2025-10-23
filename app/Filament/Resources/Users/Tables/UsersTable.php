@@ -6,6 +6,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -15,12 +16,15 @@ class UsersTable
     {
         return $table
             ->columns([
-                TextColumn::make('avatar'),
+                ImageColumn::make('avatar')->label('Image')->circular(),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('email')
                     ->label('Email address')
                     ->searchable(),
+                TextColumn::make('phone')
+                    ->searchable(),
+                TextColumn::make('role'),
                 IconColumn::make('is_active')
                     ->boolean(),
                 TextColumn::make('created_at')

@@ -16,7 +16,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    
+
     protected $fillable = [
         'name',
         'email',
@@ -24,6 +24,7 @@ class User extends Authenticatable
         'phone',
         'role',
         'avatar',
+        'adresse',
         'is_active'
     ];
 
@@ -48,6 +49,16 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function agent()
+    {
+        return $this->hasOne(Agent::class);
+    }
+
+    public function client()
+    {
+        return $this->hasOne(Client::class);
     }
 
     public function getAvatar()

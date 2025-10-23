@@ -13,16 +13,13 @@ return new class extends Migration
     {
         Schema::create('rapports', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('mission_id')->constrained()->onDelete('cascade');
-            $table->foreignId('auteur_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('cible_id')->constrained('users')->onDelete('cascade');
-            $table->enum('type', ['plainte_agent', 'plainte_client']);
-            $table->text('message');
-            $table->enum('statut', ['en_attente', 'traité'])->default('en_attente');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->enum('type', ['aide', 'plainte'])->default('aide');
+            $table->text('description');
             $table->timestamps();
         });
     }
-    
+
 
     /**
      * Reverse the migrations.

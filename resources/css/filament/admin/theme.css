@@ -1,0 +1,10 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+
+.fi-sidebar {
+    @apply bg-white dark:bg-gray-900;
+    @apply shadow-lg;
+}

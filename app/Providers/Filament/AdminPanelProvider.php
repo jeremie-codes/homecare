@@ -18,6 +18,8 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Filament\Filament;
+use Filament\Actions\Action;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -29,7 +31,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Red,
+                'primary' => Color::Cyan,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
@@ -39,7 +41,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
-                FilamentInfoWidget::class,
+                // FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -55,6 +57,23 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->favicon(asset('icons/icon.png'));
+            ->viteTheme('resources/css/filament/admin/theme.css')
+            //->breadcrumbs(false)
+            ->brandLogo(asset('icons/logo.png'))
+            ->brandLogoHeight('60px')
+            ->favicon(asset('icons/favicon.png'))
+            ->discoverClusters(in: app_path('Filament/Clusters'), for: 'App\\Filament\\Clusters');
     }
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Action::make('edit')
+                ->url(route('posts.edit', ['post' => '1'])),
+            Action::make('delete')
+                ->requiresConfirmation()
+                ->action(fn () => 'delete'),
+        ];
+    }
+
 }

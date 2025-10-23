@@ -9,11 +9,16 @@ class Evaluation extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['mission_id', 'client_id', 'agent_id', 'note', 'commentaire'];
+    protected $fillable = [
+        'client_id',
+        'agent_id',
+        'rating',
+        'commentaire',
+    ];
 
-    public function mission()
+    public function reservation()
     {
-        return $this->belongsTo(Mission::class);
+        return $this->belongsTo(Reservation::class);
     }
 
     public function client()

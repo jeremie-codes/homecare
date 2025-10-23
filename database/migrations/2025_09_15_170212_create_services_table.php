@@ -14,14 +14,15 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->string('image');
             $table->text('description')->nullable();
-            $table->enum('type_agent', ['nounou', 'menager']);
+            $table->enum('type', ['babysitter', 'menager']);
             $table->decimal('prix_base', 10, 2);
-            $table->boolean('actif')->default(true);
+            $table->boolean('is_actif')->default(true);
             $table->timestamps();
         });
     }
-    
+
 
     /**
      * Reverse the migrations.

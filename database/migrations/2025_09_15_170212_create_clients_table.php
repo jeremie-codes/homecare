@@ -14,13 +14,12 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->enum('type', ['individu', 'entreprise']);
-            $table->string('adresse')->nullable();
+            $table->enum('type', ['personnel', 'entreprise']);
             $table->string('entreprise_nom')->nullable();
             $table->timestamps();
         });
     }
-    
+
 
     /**
      * Reverse the migrations.

@@ -14,16 +14,20 @@ return new class extends Migration
         Schema::create('agents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->enum('type', ['nounou', 'menager']);
+            $table->bigInteger('service_id')->nullable()->constrained('services')->onDelete('set null');
+            $table->enum('type', ['babysitter', 'menager']);
             $table->integer('experience')->default(0);
-            $table->enum('disponibilite', ['temps plein', 'temps partiel']);
-            $table->decimal('tarif_horaire', 10, 2)->nullable();
+            $table->integer('rating')->default(0);
+            $table->boolean('is_badges')->default(false);
+            $table->dateTime('recommended_at')->nullable();
+            $table->foreignId('recommended_by')->nullable()->constrained('users')->onDelete('set null');
+            $table->enum('disponibilite', ['temps plein', 'temps partiel', 'occasionnel'])->default('temps plein');
             $table->string('adresse')->nullable();
             $table->enum('statut', ['disponible', 'occupé'])->default('disponible');
             $table->timestamps();
         });
     }
-    
+
     /**
      * Reverse the migrations.
      */

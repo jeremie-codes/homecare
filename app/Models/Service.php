@@ -9,15 +9,10 @@ class Service extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nom', 'description', 'type_agent', 'prix_base', 'actif'];
+    protected $fillable = ['nom', 'description', 'type', 'prix_base', 'is_actif', 'image',  ];
 
     public function taches()
     {
         return $this->hasMany(Tache::class);
-    }
-
-    public function missionsServices()
-    {
-        return $this->hasMany(MissionService::class);
     }
 }

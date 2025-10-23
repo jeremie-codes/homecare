@@ -13,15 +13,14 @@ return new class extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('mission_id')->constrained()->onDelete('cascade');
-            $table->foreignId('client_id')->constrained()->onDelete('cascade');
-            $table->foreignId('agent_id')->constrained()->onDelete('cascade');
-            $table->tinyInteger('note'); // 1 à 5
+            $table->foreignId('client_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('agent_id')->nullable()->constrained()->onDelete('set null');
+            $table->tinyInteger('rating')->comment('1 à 5 étoiles');
             $table->text('commentaire')->nullable();
             $table->timestamps();
         });
     }
-    
+
 
     /**
      * Reverse the migrations.
