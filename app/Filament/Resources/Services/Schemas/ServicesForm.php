@@ -17,7 +17,6 @@ class ServicesForm
             ->components([
                 Section::make([
                     FileUpload::make('image')
-                        ->disk('public/storage')
                         ->directory("services")
                         ->required()->columnSpanFull(),
                     TextInput::make('nom')
