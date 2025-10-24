@@ -23,7 +23,7 @@ class ServiceController extends Controller
     public function show($id)
     {
         try {
-            $service = Service::with(['taches', 'pricings'])->findOrFail($id);
+            $service = Service::with(['taches'])->findOrFail($id);
             return response()->json($service);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Service introuvable', 'message' => $e->getMessage()], 404);

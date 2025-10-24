@@ -15,9 +15,6 @@ Route::prefix('auth')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
 });
 
-Route::get('/test', function() {
-    return ['message' => 'ok'];
-});
 
 // ---------------- SERVICES ----------------
 Route::get('/services', [ServiceController::class, 'index']);
