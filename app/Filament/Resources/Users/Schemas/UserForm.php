@@ -19,7 +19,7 @@ class UserForm
                 FileUpload::make('avatar')
                     ->label('Photo de profil (optionnel)')
                     ->image()
-                    ->directory('profiles')
+                    ->directory('profiles-images')
                     ->disk('public')
                     ->maxSize(4096)
                     ->default(null)->columnSpanFull(),

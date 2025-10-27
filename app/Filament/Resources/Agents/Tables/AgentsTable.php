@@ -17,15 +17,21 @@ class AgentsTable
             ->columns([
                 TextColumn::make('user.name')
                 ->label("Utilisateur")
+                    ->searchable()
                     ->sortable(),
                 // TextColumn::make('service_id')->numeric()->sortable(),
-                TextColumn::make('type'),
+                TextColumn::make('type')->searchable(),
                 TextColumn::make('experience')
+                    ->state(function ($record) {
+                        return $record->experience == 0 ? $record->experience . '' : $record->experience . ' an(s)';
+                    })
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('Note')
-                    ->numeric()
-                    ->sortable(),
+                TextColumn::make('Note')->state(function ($record) {
+                    return $record->note ?? 0 . '/5';
+                })
+                ->numeric()
+                ->sortable(),
                 IconColumn::make('is_badges')
                     ->label('Badge')
                     ->boolean(),

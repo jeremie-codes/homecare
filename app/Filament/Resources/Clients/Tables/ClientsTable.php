@@ -16,14 +16,17 @@ class ClientsTable
             ->columns([
                 TextColumn::make('user.name')
                     ->numeric()
+                    ->searchable()
                     ->sortable(),
-                TextColumn::make('type')->label('Type de client'),
+                TextColumn::make('type')
+                    ->searchable()
+                    ->label('Type de client'),
                 TextColumn::make('entreprise_nom')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->date()
                     ->sortable()
-                    ->toggleable(   ),
+                    ->toggleable(),
             ])
             ->filters([
                 //

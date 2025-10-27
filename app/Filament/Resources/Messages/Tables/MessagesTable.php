@@ -19,12 +19,12 @@ class MessagesTable
     {
         return $table
             ->columns([
-                TextColumn::make('sender.user.name')->label('Expéditeur')->limit(30),
-                TextColumn::make('receiver.user.name')->label('Destinateur')->limit(30),
+                TextColumn::make('sender.user.name')->label('Expéditeur')->limit(30)->searchable(),
+                TextColumn::make('receiver.user.name')->label('Destinateur')->limit(30)->searchable(),
                 TextColumn::make('reservation.service.nom')->label('Reservation'),
                 TextColumn::make('content')->label('Contenus')->limit(30),
                 BooleanColumn::make('is_read')->label('Lu'),
-                TextColumn::make('created_at')->date(),
+                TextColumn::make('created_at')->date()->searchable(),
             ])
             ->filters([
                 //TrashedFilter::make(),

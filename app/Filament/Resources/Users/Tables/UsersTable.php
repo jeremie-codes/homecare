@@ -16,7 +16,10 @@ class UsersTable
     {
         return $table
             ->columns([
-                ImageColumn::make('avatar')->label('Image')->circular(),
+                ImageColumn::make('avatar')->label('Image')->circular()
+                ->state(function ($record) {
+                    return asset($record->image);
+                }),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('email')

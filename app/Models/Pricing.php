@@ -13,9 +13,15 @@ class Pricing extends Model
         'service_id',
         'price',
         'periode',
+        'taches',
         'start_date',
         'end_date',
         'is_active',
+    ];
+
+    protected $casts = [
+        'taches' => 'array',
+        'is_active' => 'boolean',
     ];
 
     public function service()

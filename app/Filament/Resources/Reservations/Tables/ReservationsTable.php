@@ -22,8 +22,8 @@ class ReservationsTable
                 TextColumn::make('client.user.name')->label('Client')->searchable()->sortable(),
                 TextColumn::make('agent.user.name')->label('Agent')->searchable()->sortable(),
                 TextColumn::make('service.nom')->searchable()->sortable(),
-                TextColumn::make('duree', function ($record) {
-                    return $record . 'frequence';
+                TextColumn::make('duree')->state(function ($record) {
+                    return $record->duree . ' ' . $record->frequence;
                 }),
                 BooleanColumn::make('transport_inclus'),
                 BooleanColumn::make('urgence'),

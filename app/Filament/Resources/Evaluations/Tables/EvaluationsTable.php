@@ -20,7 +20,10 @@ class EvaluationsTable
             ->columns([
                 TextColumn::make('client.user.name')->label('Client')->sortable()->searchable(),
                 TextColumn::make('agent.user.name')->label('Agent')->sortable()->searchable(),
-                TextColumn::make('rating')->label('Note'),
+                TextColumn::make('rating')->label('Note')
+                ->state(function ($record) {
+                    return $record->rating . '/5';
+                }),
                 TextColumn::make('commentaire')->limit(30),
                 TextColumn::make('created_at')->date(),
             ])
