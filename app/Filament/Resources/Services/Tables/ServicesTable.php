@@ -17,7 +17,7 @@ class ServicesTable
     {
         return $table
             ->columns([
-                ImageColumn::make('image')->label('Image'),
+                ImageColumn::make('image')->disk('public')->label('Image'),
                 TextColumn::make('nom'),
                 TextColumn::make('description')->limit(30),
                 TextColumn::make('type'),
