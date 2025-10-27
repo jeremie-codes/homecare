@@ -16,8 +16,7 @@ class PricingsTable
     {
         return $table
             ->columns([
-                TextColumn::make('service_id')
-                    ->numeric()
+                TextColumn::make('service.nom')
                     ->sortable(),
                 TextColumn::make('price')
                     ->money()
