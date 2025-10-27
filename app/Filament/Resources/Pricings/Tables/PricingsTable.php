@@ -21,25 +21,19 @@ class PricingsTable
                     ->sortable(),
                 TextColumn::make('price')
                     ->money()
+                    ->label('Prix')
                     ->sortable(),
                 TextColumn::make('periode')
                     ->searchable(),
-                TextColumn::make('start_date')
-                    ->date()
-                    ->sortable(),
-                TextColumn::make('end_date')
-                    ->date()
-                    ->sortable(),
+                TextColumn::make('taches')
+                    ->limit(30)
+                    ->searchable(),
                 IconColumn::make('is_active')
+                    ->label('Actif')
                     ->boolean(),
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->date()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

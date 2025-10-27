@@ -27,10 +27,18 @@ class PricingForm
                                 ->placeholder('Choisir')
                                 ->relationship('service', 'nom'),
                             TextInput::make('price')
+                                ->label('Prix')
                                 ->required()
                                 ->default(0)
                                 ->prefix('$'),
-                            TextInput::make('periode')
+                            Select::make('periode')
+                                ->options([
+                                    'heure' => 'Par Heure',
+                                    'heure' => 'Par Jour',
+                                    'heure' => 'Par Semaine',
+                                    'mois' => 'Par Mois',
+                                    'annee' => 'Par Année',
+                                ])
                                 ->required(),
                             TagsInput::make('taches')
                                 ->label('Tâches du bouquet')
