@@ -20,6 +20,12 @@ Route::prefix('auth')->group(function () {
 Route::get('/services', [ServiceController::class, 'index']);
 Route::get('/services/{id}', [ServiceController::class, 'show']);
 
+// -------- Agents --------
+Route::prefix('agents')->group(function () {
+    Route::get('/service/{service_id}', [AgentController::class, 'getByService']);
+    Route::get('/{id}', [AgentController::class, 'show']);
+    Route::get('/recommended/{clientId}', [TaskController::class, 'getAgentRecommendedByClient']);
+});
 
 // =================== ROUTES PROTÉGÉES ===================
 Route::middleware('auth:sanctum')->group(function () {
@@ -34,15 +40,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/newpassword', [AccountController::class, 'updatePassword']);
         Route::delete('/delete', [AccountController::class, 'deleteAccount']);
     });
-
-
-    // -------- Agents --------
-    Route::prefix('agents')->group(function () {
-        Route::get('/service/{service_id}', [AgentController::class, 'getByService']);
-        Route::get('/{id}', [AgentController::class, 'show']);
-        Route::get('/recommended/{clientId}', [TaskController::class, 'getAgentRecommendedByClient']);
-    });
-
 
     // -------- Réservations --------
     Route::prefix('reservations')->group(function () {
