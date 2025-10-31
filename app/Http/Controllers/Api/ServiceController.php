@@ -11,7 +11,7 @@ class ServiceController extends Controller
     {
         try {
             $services = Service::with(['taches'])
-                ->where('is_actif', true)
+                ->where('is_actif', true)->orderBy('created_at', 'desc')
                 ->get();
 
             return response()->json($services);
