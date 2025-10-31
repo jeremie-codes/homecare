@@ -50,6 +50,7 @@ class AgentForm
                                 TextInput::make('role')
                                     ->default('agent')
                                     ->disabled()
+                                    ->dehydrated(true)
                                     ->required(),
                                 TextInput::make('adresse')
                                     ->default(null),
