@@ -14,6 +14,7 @@ class AgentController extends Controller
             $agents = Agent::with('user')
                 ->where('service_id', $service_id)
                 ->where('statut', 'disponible')
+                ->where('is_badges', true)
                 ->get();
 
             return response()->json($agents);
