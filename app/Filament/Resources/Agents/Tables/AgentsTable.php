@@ -27,8 +27,8 @@ class AgentsTable
                     })
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('Note')->state(function ($record) {
-                    return $record->note . '/5';
+                TextColumn::make('rating')->state(function ($record) {
+                    return $record->rating ?? 0 . '/5';
                 })
                 ->numeric()
                 ->sortable(),
