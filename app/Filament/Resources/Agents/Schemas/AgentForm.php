@@ -63,7 +63,9 @@ class AgentForm
                                     ->label("Aciter le compte")
                                     ->default(true)
                                     ->required(),
-                            ])->createOptionAction(function (Action $action) {
+                            ])->createOptionUsing(function (array $data) {
+                                return User::create($data)->getKey();
+                            })->createOptionAction(function (Action $action) {
                                 return $action
                                     ->modalHeading('Création d\'un utilisateur')
                                     ->modalSubmitActionLabel('Créer')

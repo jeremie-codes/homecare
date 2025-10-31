@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Services\Schemas;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -23,8 +24,6 @@ class ServicesForm
                     TextInput::make('nom')
                         ->label('Nom du service')
                         ->required(),
-                    TextInput::make('description')
-                        ->required(),
                     Select::make('type')
                         ->label('Type de service')
                         ->placeholder('choisir')
@@ -41,6 +40,8 @@ class ServicesForm
                         ->label('Visibilité')
                         ->default(true)
                         ->required(),
+                    RichEditor::make('description')
+                        ->columnSpanFull(),
                 ])->columns(2)->columnSpanFull(),
             ]);
     }

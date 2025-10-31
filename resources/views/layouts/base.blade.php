@@ -26,7 +26,7 @@
     <link rel='stylesheet' id='elementor-post-585-css' href='{{ asset("front/wp-content/uploads/sites/44/elementor/css/post-585f4c9.css?ver=1757533375") }}' media='all' />
     <link rel='stylesheet' id='elementor-post-717-css' href='{{ asset("front/wp-content/uploads/sites/44/elementor/css/post-717f4c9.css?ver=1757533375") }}' media='all' />
     <style id='wp-emoji-styles-inline-css'>
-    
+
         img.wp-smiley, img.emoji {
             display: inline !important;
             border: none !important;
@@ -61,7 +61,7 @@
     <link rel='stylesheet' id='widget-counter-css' href='{{ asset("front/wp-content/plugins/elementor/assets/css/widget-counter.min66bc.css?ver=3.31.5") }}' media='all' />
     <link rel='stylesheet' id='widget-video-css' href='{{ asset("front/wp-content/plugins/elementor/assets/css/widget-video.min66bc.css?ver=3.31.5") }}' media='all' />
     <link rel='stylesheet' id='e-animation-bounceIn-css' href='{{ asset("front/wp-content/plugins/elementor/assets/lib/animations/styles/bounceIn.min66bc.css?ver=3.31.5") }}' media='all' />
-    
+
     <link rel='stylesheet' id='widget-rating-css' href='{{ asset("front/wp-content/plugins/elementor/assets/css/widget-rating.min66bc.css?ver=3.31.5") }}' media='all' />
     <link rel='stylesheet' id='widget-divider-css' href='{{ asset("front/wp-content/plugins/elementor/assets/css/widget-divider.min66bc.css?ver=3.31.5") }}' media='all' />
     <link rel='stylesheet' id='swiper-css' href='{{ asset("front/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min94a4.css?ver=8.4.5") }}' media='all' />
@@ -71,7 +71,7 @@
     <link rel='stylesheet' id='elementor-post-975-css' href='{{ asset("front/wp-content/uploads/sites/44/elementor/css/post-9754a54.css?ver=1757544127") }}' media='all' />
     <link rel='stylesheet' id='ekit-widget-styles-css' href='{{ asset("front/wp-content/plugins/elementskit-lite/widgets/init/assets/css/widget-stylesf3df.css?ver=3.7.2") }}' media='all' />
     <link rel='stylesheet' id='ekit-responsive-css' href='{{ asset("front/wp-content/plugins/elementskit-lite/widgets/init/assets/css/responsivef3df.css?ver=3.7.2") }}' media='all' />
-    
+
     <link rel='stylesheet' id='elementor-gf-local-dmsans-css' href='{{ asset("front/wp-content/uploads/sites/44/elementor/google-fonts/css/dmsansaf97.css?ver=1756138878") }}' media='all' />
     <link rel='stylesheet' id='elementor-icons-ekiticons-css' href='{{ asset("front/wp-content/plugins/elementskit-lite/modules/elementskit-icon-pack/assets/css/ekiticonsf3df.css?ver=3.7.2") }}' media='all' />
     <script src="{{ asset("front/wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1") }}" id="jquery-core-js"></script>
@@ -111,18 +111,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></head>
 
 <body style="overflow-x: hidden;" class="wp-singular envato_tk_templates-template envato_tk_templates-template-elementor_header_footer single single-envato_tk_templates postid-5 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-full-width elementor-kit-3 elementor-page elementor-page-5">
-	
+
     <a class="skip-link screen-reader-text" href="#content">
-		Skip to content 
+		Skip to content
 	</a>
 
     {{-- Header --}}
-    <div class="ekit-template-content-markup ekit-template-content-header ekit-template-content-theme-support"> 
+    <div class="ekit-template-content-markup ekit-template-content-header ekit-template-content-theme-support">
         <div data-elementor-type="wp-post" data-elementor-id="585" class="elementor elementor-585">
             <div class="elementor-element elementor-element-e1d407f e-flex e-con-boxed e-con e-parent" data-id="e1d407f"
                 data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                 <div class="e-con-inner">
-                    <div class="elementor-element elementor-element-dab0739 e-con-full e-flex e-con e-child"
+                    <div class="gap-2 pe-5 elementor-element elementor-element-dab0739 e-con-full e-flex e-con e-child"
                         data-id="dab0739" data-element_type="container">
                         <div class="elementor-element elementor-element-f229283 e-con-full e-flex e-con e-child"
                             data-id="f229283" data-element_type="container">
@@ -133,6 +133,7 @@
                                     <img width="90" src="{{ asset('icons/logo.png') }}" class="attachment-full size-full wp-image-643" alt="" />
                                 </div>
                             </div>
+
                             <div class="elementor-element elementor-element-ad55bf4 e-con-full e-flex e-con e-child"
                                 data-id="ad55bf4" data-element_type="container">
                                 <div class="elementor-element elementor-element-3addf3a elementor-widget elementor-widget-ekit-nav-menu"
@@ -140,7 +141,7 @@
                                     data-widget_type="ekit-nav-menu.default">
                                     <div class="elementor-widget-container">
                                         <nav class="ekit-wid-con ekit_menu_responsive_tablet" data-hamburger-icon="" data-hamburger-icon-type="icon" data-responsive-breakpoint="1024">
-                                            
+
                                             <button class="elementskit-menu-hamburger elementskit-menu-toggler"
                                                 type="button" aria-label="hamburger-icon">
                                                 <span class="elementskit-menu-hamburger-icon"></span>
@@ -187,14 +188,14 @@
                             data-id="35e0969" data-element_type="container">
                             <div class="elementor-element elementor-element-41722b5 elementor-view-stacked elementor-position-left elementor-shape-circle elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
                                 data-id="41722b5" data-element_type="widget" data-widget_type="icon-box.default">
-                                <div class="elementor-icon-box-wrapper">
+                                <div class="justify-content-center align-items-center elementor-icon-box-wrapper d-flex">
 
                                     <div class="elementor-icon-box-icon">
                                         <a href="#" class="elementor-icon" tabindex="-1" aria-label="Hotline">
                                             <i aria-hidden="true" class="icon icon-phone1"></i> </a>
                                     </div>
 
-                                    <div class="elementor-icon-box-content items-center justify-center">
+                                    <div class="items-center justify-center elementor-icon-box-content">
 
                                         <h6 class="elementor-icon-box-title">
                                             <a href="#">
@@ -202,8 +203,8 @@
                                             </a>
                                         </h6>
 
-                                        <p class="elementor-icon-box-description" style="font-size: 14px;">
-                                        (+243) 825-278-364 
+                                        <p class="elementor-icon-box-description" style="font-size: 13px;">
+                                        (+243) 825-278-364
                                         </p>
 
                                     </div>
@@ -216,7 +217,7 @@
             </div>
         </div>
     </div>
-       
+
     @yield('content')
 
     <div class="ekit-template-content-markup ekit-template-content-footer ekit-template-content-theme-support">
@@ -224,7 +225,7 @@
             <div class="elementor-element elementor-element-fa1f6a8 e-flex e-con-boxed e-con e-parent" data-id="fa1f6a8"
                 data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                 <div class="e-con-inner">
-                    <div class="elementor-element elementor-element-3d99ef8 e-con-full e-flex e-con e-child container"data-id="3d99ef8" data-element_type="container">
+                    <div class="container elementor-element elementor-element-3d99ef8 e-con-full e-flex e-con e-child"data-id="3d99ef8" data-element_type="container">
                         <div class="elementor-element elementor-element-e1dfc7b e-con-full e-flex e-con e-child"
                             data-id="e1dfc7b" data-element_type="container">
                             <div class="elementor-element elementor-element-c56f446 elementor-widget elementor-widget-image"
@@ -288,7 +289,7 @@
 
                                                 <h6 class="elementor-icon-box-title">
                                                     <span>
-                                                        Kabalo Mushi, Kinshasa, République démocratique du Congo 
+                                                        Kabalo Mushi, Kinshasa, République démocratique du Congo
                                                     </span>
                                                 </h6>
 
@@ -428,7 +429,7 @@
                                     <div id="mf-response-props-id-738" data-previous-steps-style=""
                                         data-editswitchopen="" data-response_type="alert"
                                         data-erroricon="fas fa-exclamation-triangle" data-successicon="fas fa-check"
-                                        data-messageposition="top" class="   mf-scroll-top-no">
+                                        data-messageposition="top" class=" mf-scroll-top-no">
                                         <div class="formpicker_warper formpicker_warper_editable"
                                             data-metform-formpicker-key="738">
 
@@ -453,7 +454,7 @@
                                                     function controls_data (value){
                                                         let currentWrapper = "mf-response-props-id-738";
                                                         let currentEl = document.getElementById(currentWrapper);
-                                                        
+
                                                         return currentEl ? currentEl.dataset[value] : false
                                                     }
 
@@ -461,24 +462,24 @@
                                                     let is_edit_mode = '' ? true : false;
                                                     let message_position = controls_data('messageposition') || 'top';
 
-                                                    
+
                                                     let message_successIcon = controls_data('successicon') || '';
                                                     let message_errorIcon = controls_data('erroricon') || '';
                                                     let message_editSwitch = controls_data('editswitchopen') === 'yes' ? true : false;
                                                     let message_proClass = controls_data('editswitchopen') === 'yes' ? 'mf_pro_activated' : '';
-                                                    
+
                                                     let is_dummy_markup = is_edit_mode && message_editSwitch ? true : false;
 
-                                                    
+
                                                     return html`
                                                         <form
                                                             className="metform-form-content"
                                                             ref=${parent.formContainerRef}
                                                             onSubmit=${ validation.handleSubmit( parent.handleFormSubmit ) }
-                                                        
+
                                                             >
-                                                    
-                                                    
+
+
                                                             ${is_dummy_markup ? message_position === 'top' ?  props.ResponseDummyMarkup(message_successIcon, message_proClass) : '' : ''}
                                                             ${is_dummy_markup ? ' ' :  message_position === 'top' ? props.SubmitResponseMarkup`${parent}${state}${message_successIcon}${message_errorIcon}${message_proClass}` : ''}
 
@@ -495,28 +496,28 @@
                                                         <div className="elementor-element elementor-element-92b676b e-con-full e-flex e-con e-child" data-id="92b676b" data-element_type="container">
                                                         <div className="elementor-element elementor-element-c76e96a e-con-full e-flex e-con e-child" data-id="c76e96a" data-element_type="container">
                                                                 <div className="elementor-element elementor-element-d1b0205 elementor-widget elementor-widget-mf-email" data-id="d1b0205" data-element_type="widget" data-settings="{&quot;mf_input_name&quot;:&quot;mf-email&quot;}" data-widget_type="mf-email.default">
-                                                                    
+
                                                         <div className="mf-input-wrapper">
-                                                            
-                                                            <input 
-                                                                type="email" 
-                                                                
-                                                                defaultValue="" 
-                                                                className="mf-input " 
-                                                                id="mf-input-email-d1b0205" 
-                                                                name="mf-email" 
-                                                                placeholder="${ parent.decodeEntities(`Enter Your Email`) } " 
-                                                                
-                                                                onBlur=${parent.handleChange} onFocus=${parent.handleChange} aria-invalid=${validation.errors['mf-email'] ? 'true' : 'false' } 
+
+                                                            <input
+                                                                type="email"
+
+                                                                defaultValue=""
+                                                                className="mf-input "
+                                                                id="mf-input-email-d1b0205"
+                                                                name="mf-email"
+                                                                placeholder="${ parent.decodeEntities(`Enter Your Email`) } "
+
+                                                                onBlur=${parent.handleChange} onFocus=${parent.handleChange} aria-invalid=${validation.errors['mf-email'] ? 'true' : 'false' }
                                                                 ref=${el=> parent.activateValidation({"message":"This field is required.","emailMessage":"Please enter a valid Email address","minLength":1,"maxLength":"","type":"none","required":false,"expression":"null"}, el)}
                                                                             />
 
-                                                                        <${validation.ErrorMessage} 
-                                                                errors=${validation.errors} 
-                                                                name="mf-email" 
+                                                                        <${validation.ErrorMessage}
+                                                                errors=${validation.errors}
+                                                                name="mf-email"
                                                                 as=${html`<span className="mf-error-message"></span>`}
                                                             />
-                                                            
+
                                                                     </div>
 
                                                                 </div>
@@ -537,7 +538,7 @@
 
                                                             ${is_dummy_markup ? message_position === 'bottom' ? props.ResponseDummyMarkup(message_successIcon, message_proClass) : '' : ''}
                                                             ${is_dummy_markup ? ' ' : message_position === 'bottom' ? props.SubmitResponseMarkup`${parent}${state}${message_successIcon}${message_errorIcon}${message_proClass}` : ''}
-                                                        
+
                                                         </form>
                                                     `
                                                 </script>
@@ -595,10 +596,14 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
     <script type="speculationrules">
         {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/cleasy\/*"},{"not":{"href_matches":["\/cleasy\/wp-*.php","\/cleasy\/wp-admin\/*","\/cleasy\/wp-content\/uploads\/sites\/44\/*","\/cleasy\/wp-content\/*","\/cleasy\/wp-content\/plugins\/*","\/cleasy\/wp-content\/themes\/hello-elementor\/*","\/cleasy\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
     </script>
-    
+
     <script>
         const lazyloadRunObserver = () => {
             const lazyloadBackgrounds = document.querySelectorAll(`.e-con.e-parent:not(.e-lazyloaded)`);
@@ -632,8 +637,8 @@
     <link rel='stylesheet' id='flatpickr-css' href='{{ asset("front/wp-content/plugins/metform/public/assets/css/flatpickr.min8603.css?ver=4.0.6") }}' media='all' />
     <link rel='stylesheet' id='widget-social-icons-css' href='{{ asset("front/wp-content/plugins/elementor/assets/css/widget-social-icons.min66bc.css?ver=3.31.5") }}' media='all' />
     <link rel='stylesheet' id='e-apple-webkit-css' href='{{ asset("front/wp-content/plugins/elementor/assets/css/conditionals/apple-webkit.min66bc.css?ver=3.31.5") }}' media='all' />
-    <link rel='stylesheet' id='elementor-post-738-css' href='{{ asset("front/wp-content/uploads/sites/44/elementor/css/post-73845d2.css?ver=1757533376") }}' media='all' />      
-    
+    <link rel='stylesheet' id='elementor-post-738-css' href='{{ asset("front/wp-content/uploads/sites/44/elementor/css/post-73845d2.css?ver=1757533376") }}' media='all' />
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
     <script src="{{ asset("front/wp-content/plugins/metform/public/assets/lib/cute-alert/cute-alert8603.js?ver=4.0.6") }}" id="cute-alert-js"></script>

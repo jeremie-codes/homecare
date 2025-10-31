@@ -23,32 +23,32 @@ class StatWeb extends BaseWidget
             Stat::make('Utilisateurs', User::count())
                 ->description('Nombre total d\'utilisateurs')
                 ->color('primary')
-                ->chart([15, 4, 10, 2, 12, 4, 12]),
+                ->chart([0, 0]),
 
             Stat::make('Clients', Client::count())
                 ->description('Nombre total des clients')
                 ->color('warning')
-                ->chart([15, 4, 10, 2, 12, 4, 12]),
+                ->chart([0, 0]),
 
             Stat::make('Agents', Agent::count())
                 ->description('Nombre total d\'agents')
                 ->color('info')
-                ->chart([15, 4, 10, 2, 12, 4, 12]),
+                ->chart([0, 0]),
 
             Stat::make('Services', Service::count())
                 ->description('Nombre total de services')
-                ->color('danger')
-                ->chart([15, 4, 10, 2, 12, 4, 12]),
+                ->color('success')
+                ->chart([0, 0]),
 
             Stat::make('Pricing', Message::count())
                 ->description('Nombre de prix affichés')
-                ->color('success')
-                ->chart([15, 4, 10, 2, 12, 4, 12]),
+                ->color('primary')
+                ->chart([0, 0]),
 
             Stat::make('Contact', Agent::count())
                 ->description('Nombre total de message')
-                ->color('primary')
-                ->chart([15, 4, 10, 2, 12, 4, 12])
+                ->color('danger')
+                ->chart([0, 0]),
         ];
     }
 }
