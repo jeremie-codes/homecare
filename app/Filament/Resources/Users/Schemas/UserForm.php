@@ -32,7 +32,7 @@ class UserForm
                 TextInput::make('phone')
                     ->tel()
                     ->maxLength(12)
-                    ->regex('/^0[0-9]{9}$/')
+                    ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
                     ->default(null),
                 Select::make('role')
                     ->options(['admin' => 'Admin', 'agent' => 'Agent', 'client' => 'Client'])
