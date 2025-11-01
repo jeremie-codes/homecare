@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
@@ -19,7 +20,11 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->orWhere('phone', $request->email)->first();
 
         if (!$user || !Hash::check($request->password, $user->password)) {
-            return response()->json(['message' => 'Identifiants invalides'], 401);
+            return response()->json([
+                'success' => false,
+                'message' => 'Identifiants invalides',
+                'data' => null
+            ], 401);
         }
 
         // Génération d’un token si tu utilises Sanctum
@@ -29,13 +34,62 @@ class AuthController extends Controller
         $profile = $user->role === 'agent' ? $user->agent : $user->client;
 
         return response()->json([
-            'token' => $token,
-            'user' => $user,
-            'profile' => $profile,
+            'success' => true,
+            'message' => 'Connexion reussie',
+            'data' => [
+                'token' => $token,
+                'user' => $user,
+                'profile' => $profile,
+            ]
         ]);
     }
 
-        /**
+    public function signin(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'nullable|string|email',
+            'password' => 'required|string',
+            'phone' => 'nullable|string',
+        ]);
+
+        $userExistant = User::where('email', $request->email)->orWhere('phone', $request->email)->first();
+
+        if ($userExistant) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Identifiants existants',
+                'data' => null
+            ], 401);
+        }
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'phone' => $request->name,
+        ]);
+
+        $client = Client::create([
+            'user_id' => $user->id,
+            'type' => 'particulier',
+        ]);
+
+        // Génération d’un token si tu utilises Sanctum
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Connexion reussie',
+            'data' => [
+                'token' => $token,
+                'user' => $user,
+                'profile' => $client,
+            ]
+        ]);
+    }
+
+    /**
      * 🔹 Supprime le compte utilisateur
      */
     public function deleteAccount(Request $request)
