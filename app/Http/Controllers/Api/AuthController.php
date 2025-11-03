@@ -100,7 +100,6 @@ class AuthController extends Controller
         ]);
     }
 
-
     /**
      * 🔹 Supprime le compte utilisateur
      */

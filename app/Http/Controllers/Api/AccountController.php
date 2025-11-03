@@ -118,8 +118,7 @@ class AccountController extends Controller
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'message' => 'Erreur lors de la suppression du compte.',
-                'error' => $e->getMessage(), // optionnel, utile en développement
+                'message' =>  $e->getMessage() ??'Erreur lors de la suppression du compte.',
             ], 500);
         }
     }
