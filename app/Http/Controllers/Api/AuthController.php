@@ -50,6 +50,8 @@ class AuthController extends Controller
             'name' => 'required|string',
             'email' => 'nullable|string|email',
             'password' => 'required|string',
+            'type' => 'nullable|string',
+            'entreprise_nom' => 'nullable|string',
             'phone' => 'nullable|string',
         ]);
 
@@ -58,7 +60,7 @@ class AuthController extends Controller
         if ($userExistant) {
             return response()->json([
                 'success' => false,
-                'message' => 'Identifiants existants',
+                'message' => 'Utilisateur existants',
                 'data' => null
             ], 401);
         }
@@ -72,7 +74,8 @@ class AuthController extends Controller
 
         $client = Client::create([
             'user_id' => $user->id,
-            'type' => 'particulier',
+            'type' => $request->type,
+            'entreprise_nom' => $request->entreprise_nom,
         ]);
 
         // Génération d’un token si tu utilises Sanctum
@@ -80,7 +83,7 @@ class AuthController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'Connexion reussie',
+            'message' => 'Utilisateur créé avec succès',
             'data' => [
                 'token' => $token,
                 'user' => $user,
