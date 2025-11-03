@@ -94,7 +94,7 @@ class AuthController extends Controller
             'message' => 'Utilisateur créé avec succès',
             'data' => [
                 'token' => $token,
-                'user' => $user,
+                'user' => User::find($user->id),
                 'profile' => $client,
             ]
         ]);
