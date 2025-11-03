@@ -44,7 +44,7 @@ class AuthController extends Controller
         ]);
     }
 
-    public function signin(Request $request)
+    public function register(Request $request)
     {
         $request->validate([
             'name' => 'required|string',
