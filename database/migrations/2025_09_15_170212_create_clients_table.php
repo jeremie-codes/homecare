@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->enum('type', ['personnel', 'entreprise']);
+            $table->enum('type', ['particulier', 'entreprise']);
             $table->string('entreprise_nom')->nullable();
             $table->timestamps();
         });

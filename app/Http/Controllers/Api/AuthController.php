@@ -55,12 +55,21 @@ class AuthController extends Controller
             'phone' => 'nullable|string',
         ]);
 
-        $userExistant = User::where('email', $request->email)->orWhere('phone', $request->email)->first();
+        if (!$request->email && !$request->phone) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Veuillez renseigner un email ou un numéro de téléphone.',
+            ], 422);
+        }
+
+        $userExistant = User::where('email', $request->email)
+            ->orWhere('phone', $request->phone)
+            ->first();
 
         if ($userExistant) {
             return response()->json([
                 'success' => false,
-                'message' => 'Utilisateur existants',
+                'message' => 'Utilisateur existant',
                 'data' => null
             ], 401);
         }
@@ -69,7 +78,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'phone' => $request->name,
+            'phone' => $request->phone,
         ]);
 
         $client = Client::create([
@@ -78,7 +87,6 @@ class AuthController extends Controller
             'entreprise_nom' => $request->entreprise_nom,
         ]);
 
-        // Génération d’un token si tu utilises Sanctum
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json([
@@ -91,6 +99,7 @@ class AuthController extends Controller
             ]
         ]);
     }
+
 
     /**
      * 🔹 Supprime le compte utilisateur
