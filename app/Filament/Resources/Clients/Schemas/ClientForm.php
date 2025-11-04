@@ -25,7 +25,7 @@ class ClientForm
                             ->label('Compte utilisateur')
                             ->options(User::where('role', 'client')->pluck('name', 'id'))
                             ->placeholder("Choisir")
-                            ->belowContent("Soit cliquer sur + pour ajoute un compte")
+                            ->belowContent("Soit cliquer sur + pour ajoute un utilisateur pour ce client")
                             ->createOptionForm([
                                 FileUpload::make('avatar')
                                     ->label('Photo de profil (optionnel)')
