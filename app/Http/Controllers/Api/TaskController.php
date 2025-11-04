@@ -72,7 +72,10 @@ class TaskController extends Controller
     {
         try {
             $agents = Agent::where('recommended_by', $clientId)->get();
-            return response()->json($agents);
+            return response()->json([
+                "success" => true,
+                "agents" => $agents
+            ]);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Impossible de récupérer les agents recommandés', 'message' => $e->getMessage()], 500);
         }
