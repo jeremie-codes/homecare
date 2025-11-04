@@ -15,7 +15,7 @@ class PlaintesTable
     {
         return $table
             ->columns([
-                TextColumn::make('client.user.name')->label('Client')->searchable()->sortable(),
+                TextColumn::make('user.name')->label('Client')->searchable()->sortable(),
                 TextColumn::make('type')->searchable()->sortable(),
                 TextColumn::make('description')->label('Description')->limit(30),
             ])
