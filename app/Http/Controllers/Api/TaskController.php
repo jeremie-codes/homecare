@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\TacheAgent;
 use App\Models\Agent;
+use App\Models\Evaluation;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -25,7 +26,7 @@ class TaskController extends Controller
                 'done' => false,
             ]);
 
-            return response()->json(['success' => true, 'task' => $task]);
+            return response()->json(['success' => true, 'task' => $task, 'message' => 'Tache ajoutée avec succèes !']);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Impossible d\'ajouter la tâche', 'message' => $e->getMessage()], 500);
         }
@@ -37,18 +38,24 @@ class TaskController extends Controller
         try {
             $task = TacheAgent::findOrFail($taskId);
             $task->delete();
-            return response()->json(['success' => true]);
+            return response()->json(['success' => true, 'message' => 'Tache supprimée avec succèes !']);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Impossible de supprimer la tâche', 'message' => $e->getMessage()], 500);
         }
     }
 
     // Récupérer les tâches d’un agent
-    public function getTaskByAgentId($agentId)
+    public function getTaskByAgentId($agentId, $clientId)
     {
+
         try {
-            $tasks = TacheAgent::with('agent')->where('agent_id', $agentId)->get();
-            return response()->json($tasks);
+            $tasks = TacheAgent::with('agent')->where('agent_id', $agentId)->where('client_id', $clientId)->get();
+
+            return response()->json([
+                "success" => true,
+                "message" => "Taches recuperées avec succèes !",
+                "datas" => $tasks
+            ]);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Impossible de récupérer les tâches', 'message' => $e->getMessage()], 500);
         }
@@ -91,12 +98,12 @@ class TaskController extends Controller
                 'commentaire' => 'nullable|string',
             ]);
 
-            $evaluation = \App\Models\Evaluation::updateOrCreate(
+            Evaluation::updateOrCreate(
                 ['client_id' => $data['client_id'], 'agent_id' => $agentId],
                 ['rating' => $data['rating'], 'commentaire' => $data['commentaire'] ?? null]
             );
 
-            return response()->json(['success' => true, 'evaluation' => $evaluation]);
+            return response()->json(['success' => true, 'message' => 'Agent noté avec succèes !']);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Impossible de noter l\'agent', 'message' => $e->getMessage()], 500);
         }
