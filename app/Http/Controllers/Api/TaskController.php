@@ -67,11 +67,11 @@ class TaskController extends Controller
         }
     }
 
-    // Agents recommandés par le client
-    public function getAgentRecommendedByClient($clientId)
+    // Agents recommandés par le id user du client
+    public function getAgentRecommendedByClient($id)
     {
         try {
-            $agents = Agent::where('recommended_by', $clientId)->get();
+            $agents = Agent::with('user')->where('recommended_by', $id)->get();
             return response()->json([
                 "success" => true,
                 "agents" => $agents

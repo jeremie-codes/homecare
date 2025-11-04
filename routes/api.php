@@ -25,7 +25,7 @@ Route::get('/services/{id}', [ServiceController::class, 'show']);
 Route::prefix('agents')->group(function () {
     Route::get('/service/{service_id}', [AgentController::class, 'getByService']);
     Route::get('/{id}', [AgentController::class, 'show']);
-    Route::get('/recommended/{clientId}', [TaskController::class, 'getAgentRecommendedByClient']);
+    Route::get('/recommended/{id}', [TaskController::class, 'getAgentRecommendedByClient']);
 });
 
 // =================== ROUTES PROTÉGÉES ===================
