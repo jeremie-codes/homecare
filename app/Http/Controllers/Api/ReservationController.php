@@ -13,8 +13,8 @@ class ReservationController extends Controller
     {
         try {
             $data = $request->validate([
-                'client_id' => 'required|exists:users,id',
-                'agent_id' => 'required|exists:users,id',
+                'client_id' => 'required|exists:clients,id',
+                'agent_id' => 'required|exists:agents,id',
                 'service_id' => 'required|exists:services,id',
                 'frequence' => 'required|string',
                 'date_reservation' => 'required|date',
