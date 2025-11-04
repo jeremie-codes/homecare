@@ -45,8 +45,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // -------- Réservations --------
     Route::prefix('reservations')->group(function () {
         Route::post('/', [ReservationController::class, 'store']);
-        Route::get('/client/{client_id}', [ReservationController::class, 'getByClient']);
-        Route::get('/show/{id}', [ReservationController::class, 'show']);
+        Route::get('/{client_id}/client', [ReservationController::class, 'getByClient']);
+        Route::get('/{id}', [ReservationController::class, 'show']);
     });
 
 
