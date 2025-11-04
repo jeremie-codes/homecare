@@ -9,7 +9,7 @@ use App\Filament\Resources\Plaintes\Pages\ViewPlainte;
 use App\Filament\Resources\Plaintes\Schemas\PlainteForm;
 use App\Filament\Resources\Plaintes\Schemas\PlainteInfolist;
 use App\Filament\Resources\Plaintes\Tables\PlaintesTable;
-use App\Models\Plainte;
+use App\Models\Rapport;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -18,11 +18,11 @@ use Filament\Tables\Table;
 
 class PlainteResource extends Resource
 {
-    protected static ?string $model = Plainte::class;
+    protected static ?string $model = Rapport::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'Rapport';
+    protected static ?string $recordTitleAttribute = 'Plaintes';
 
     public static function form(Schema $schema): Schema
     {
