@@ -47,20 +47,37 @@ class TaskController extends Controller
     // Récupérer les tâches d’un agent
     public function getTaskByAgentId($agentId, $userId)
     {
-
         try {
-            $clientId = Agent::where('user_id', $userId)->first()->id;
-            $tasks = TacheAgent::where('agent_id', $agentId)->where('client_id', $clientId)->get();
+            // On récupère l'agent lié à ce user_id
+            $agent = Agent::where('user_id', $userId)->first();
+
+            if (!$agent) {
+                return response()->json([
+                    "success" => false,
+                    "message" => "Agent non trouvé pour cet utilisateur.",
+                    "datas" => []
+                ], 404);
+            }
+
+            // Récupération des tâches
+            $tasks = TacheAgent::where('agent_id', $agentId)
+                ->where('client_id', $agent->id)
+                ->get();
 
             return response()->json([
                 "success" => true,
-                "message" => "Taches recuperées avec succèes !",
+                "message" => "Tâches récupérées avec succès !",
                 "datas" => $tasks
             ]);
         } catch (\Exception $e) {
-            return response()->json(['error' => 'Impossible de récupérer les tâches', 'message' => $e->getMessage()], 500);
+            return response()->json([
+                'success' => false,
+                'error' => 'Impossible de récupérer les tâches',
+                'message' => $e->getMessage()
+            ], 500);
         }
     }
+
 
     // Basculer le statut "done" d’une tâche
     public function toggleDone($id)
