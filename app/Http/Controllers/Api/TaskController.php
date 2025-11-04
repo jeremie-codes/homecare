@@ -49,19 +49,19 @@ class TaskController extends Controller
     {
         try {
             // On récupère l'agent lié à ce user_id
-            $agent = Agent::where('user_id', $userId)->first();
+            $client = Client::where('user_id', $userId)->first();
 
-            if (!$agent) {
+            if (!$client) {
                 return response()->json([
                     "success" => false,
-                    "message" => "Agent non trouvé pour cet utilisateur.",
+                    "message" => "Client non trouvé pour cet utilisateur.",
                     "datas" => []
                 ], 404);
             }
 
             // Récupération des tâches
             $tasks = TacheAgent::where('agent_id', $agentId)
-                ->where('client_id', $agent->id)
+                ->where('client_id', $client->id)
                 ->get();
 
             return response()->json([
