@@ -66,17 +66,19 @@ class ClientForm
                                     ->modalWidth('lg');
                             }),
 
-                            Select::make('type')
+                           Select::make('type')
                                 ->label('Type de client')
-                                ->options(['particulier' => 'Particulier', 'entreprise' => 'Entreprise'])
+                                ->options([
+                                    'particulier' => 'Particulier',
+                                    'entreprise' => 'Entreprise',
+                                ])
                                 ->reactive()
                                 ->required(),
 
                             TextInput::make('entreprise_nom')
                                 ->label('Nom de l\'entreprise')
                                 ->required()
-                                //->dehydrated(fn)
-                                ->hidden(fn ($record) => !empty($record["type"]) && $record["type"] == 'particulier')
+                                ->hidden(fn (callable $get) => $get('type') !== 'entreprise')
                                 ->default(null),
 
                     ])
