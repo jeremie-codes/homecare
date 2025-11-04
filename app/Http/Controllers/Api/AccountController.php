@@ -34,8 +34,8 @@ class AccountController extends Controller
                 // Nom unique pour éviter les conflits
                 $fileName = 'avatar_' . Str::random(8) . '.' . $file->getClientOriginalExtension();
 
-                // Dossier de destination : public/uploads/avatars/
-                $destinationPath = public_path('uploads/avatars');
+                // Dossier de destination : public/profiles/
+                $destinationPath = public_path('profiles');
 
                 // Création du dossier s’il n’existe pas
                 if (!file_exists($destinationPath)) {
@@ -51,7 +51,7 @@ class AccountController extends Controller
                 }
 
                 // Enregistrement du chemin dans la base
-                $user->avatar = 'uploads/avatars/' . $fileName;
+                $user->avatar = 'profiles/' . $fileName;
             }
 
             // Mise à jour des autres champs
