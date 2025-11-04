@@ -60,11 +60,18 @@ class AccountController extends Controller
             $user->save();
 
             return response()->json([
+                'success' => true,
                 'message' => 'Profil mis à jour avec succès',
-                'user' => $user,
+                'data' => [
+                    'user' => $user,
+                    'profile' => $user->role === 'agent' ? $user->agent : $user->client
+                ],
             ]);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Erreur,' . $e->getMessage()], 500);
+            return response()->json([
+                'message' => 'Erreur,' . $e->getMessage(),
+                'data' => null
+            ], 500);
         }
     }
 
@@ -87,7 +94,10 @@ class AccountController extends Controller
 
             $user->update(['password' => Hash::make($request->newpassword)]);
 
-            return response()->json(['message' => 'Mot de passe mis à jour avec succès']);
+            return response()->json([
+                'success' => true,
+                'message' => 'Mot de passe mis à jour avec succès'
+            ]);
         } catch (\Exception $e) {
             return response()->json(['message' => 'Erreur,' . $e->getMessage()], 500);
         }
