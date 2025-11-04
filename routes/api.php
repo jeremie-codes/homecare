@@ -53,8 +53,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
     // -------- Messages / Chat --------
+    Route::get('inbox/{user_id}', [MessageController::class, 'getByUser']);
+    
     Route::prefix('messages')->group(function () {
-        Route::get('/{user_id}', [MessageController::class, 'getByUser']);
         Route::post('/send/{sender_id}', [MessageController::class, 'send']);
         Route::get('/conversation/{sender_id}/{receiver_id}', [MessageController::class, 'getConversation']);
     });

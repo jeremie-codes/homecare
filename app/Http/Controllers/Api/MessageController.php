@@ -11,7 +11,7 @@ class MessageController extends Controller
     public function getByUser($user_id)
     {
         try {
-            $messages = Message::with('user')
+            $messages = Message::with('user', 'user.agent', 'user.client')
                 ->where('sender_id', $user_id)
                 ->orWhere('receiver_id', $user_id)
                 ->orderBy('created_at', 'asc')
