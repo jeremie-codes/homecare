@@ -51,9 +51,14 @@ class ReservationController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->get();
 
-            return response()->json($reservations);
+            return response()->json([
+                'success' => true,
+                'reservations' => $reservations
+            ]);
         } catch (\Exception $e) {
-            return response()->json(['error' => 'Erreur lors du chargement des réservations', 'message' => $e->getMessage()], 500);
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()], 500);
         }
     }
 
