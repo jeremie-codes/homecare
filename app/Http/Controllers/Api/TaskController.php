@@ -45,11 +45,12 @@ class TaskController extends Controller
     }
 
     // Récupérer les tâches d’un agent
-    public function getTaskByAgentId($agentId, $clientId)
+    public function getTaskByAgentId($agentId, $userId)
     {
 
         try {
-            $tasks = TacheAgent::with('agent')->where('agent_id', $agentId)->where('client_id', $clientId)->get();
+            $clientId = Agent::where('user_id', $userId)->first()->id;
+            $tasks = TacheAgent::where('agent_id', $agentId)->where('client_id', $clientId)->get();
 
             return response()->json([
                 "success" => true,

@@ -64,7 +64,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('taches')->group(function () {
         Route::post('/agent/{clientId}', [TaskController::class, 'addTask']);
         Route::delete('/agent/{taskId}', [TaskController::class, 'deleteTask']);
-        Route::get('/{agentId}/agent/{clientId}', [TaskController::class, 'getTaskByAgentId']);
+        Route::get('/{agentId}/agent/{userId}', [TaskController::class, 'getTaskByAgentId']);
         Route::get('/toggle/{id}', [TaskController::class, 'toggleDone']);
     });
 
