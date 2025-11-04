@@ -29,7 +29,6 @@ class ReservationController extends Controller
                 'phone' => 'required|string',
             ]);
 
-            $data['statut'] = 'en_attente';
             $data['date_reservation'] = date('Y-m-d H:i:s', strtotime($data['date_reservation']));
 
             $reservation = Reservation::create($data);
