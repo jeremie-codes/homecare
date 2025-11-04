@@ -20,11 +20,11 @@ class TacheAgent extends Model
     // Relations
     public function client()
     {
-        return $this->belongsTo(User::class, 'client_id');
+        return $this->belongsTo(Client::class);
     }
 
     public function agent()
     {
-        return $this->belongsTo(Agent::class, 'agent_id');
+        return $this->belongsTo(Agent::class);
     }
 }
