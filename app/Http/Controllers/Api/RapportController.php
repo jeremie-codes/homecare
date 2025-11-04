@@ -20,11 +20,14 @@ class RapportController extends Controller
 
             Rapport::create($validated);
 
-            return response()->json(['message' => 'Rapport envoyé avec succès.'], 201);
+            return response()->json([
+                'success' => true,
+                'message' => 'Rapport envoyé avec succès.'
+            ], 201);
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Erreur lors de l’envoi du rapport.',
-                'details' => $e->getMessage()
+                'message' => $e->getMessage()
             ], 500);
         }
     }
@@ -37,7 +40,7 @@ class RapportController extends Controller
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Impossible de charger les rapports.',
-                'details' => $e->getMessage()
+                'message' => $e->getMessage()
             ], 500);
         }
     }
