@@ -47,6 +47,8 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/', [ReservationController::class, 'store']);
         Route::get('/{client_id}/client', [ReservationController::class, 'getByClient']);
         Route::get('/{id}', [ReservationController::class, 'show']);
+        Route::post('cancel/{id}', [ReservationController::class, 'cancel']);
+        Route::post('delete/{id}', [ReservationController::class, 'delete']);
     });
 
 

@@ -73,4 +73,26 @@ class ReservationController extends Controller
         }
     }
 
+    public function cancel ($id) {
+        try {
+            $reservation = Reservation::findOrFail($id);
+            $reservation->status = 'annulée';
+            $reservation->save();
+            return response()->json(['success' => true, 'message' => 'Réservation annulée avec succès']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
+    }
+
+    public function delete($id)
+    {
+        try {
+            $reservation = Reservation::findOrFail($id);
+            $reservation->delete();
+            return response()->json(['success' => true, 'message' => 'Réservation supprimée avec succès']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
+    }
+
 }
