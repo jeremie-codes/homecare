@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Pricings\Schemas;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
@@ -48,6 +49,10 @@ class PricingForm
                             Toggle::make('is_active')
                                 ->label('Actif')
                                 ->required(),
+                            Textarea::make('description')
+                                ->required()
+                                ->maxLength(255)
+                                ->columnSpanFull(),
                     ])
             ]);
     }

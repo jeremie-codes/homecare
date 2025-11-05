@@ -641,7 +641,7 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                    <div class="elementor-element elementor-element-a169283 e-con-full e-flex e-con e-child"
+                                    {{-- <div class="elementor-element elementor-element-a169283 e-con-full e-flex e-con e-child"
                                         data-id="a169283" data-element_type="container">
                                         <div class="elementor-element elementor-element-8e558b3 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
                                             data-id="8e558b3" data-element_type="widget" data-widget_type="divider.default">
@@ -655,12 +655,11 @@
                                             <h6 class="elementor-heading-title elementor-size-default">*Lorem ipsum dolor
                                                 sit amet, consectetur adipiscing elit.</h6>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                     @endforeach
-
 
 				</div>
 

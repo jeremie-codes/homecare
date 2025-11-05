@@ -14,9 +14,8 @@ class Pricing extends Model
         'price',
         'periode',
         'taches',
-        'start_date',
-        'end_date',
         'is_active',
+        'description',
     ];
 
     protected $casts = [

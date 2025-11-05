@@ -24,14 +24,6 @@ class ServicesForm
                     TextInput::make('nom')
                         ->label('Nom du service')
                         ->required(),
-                    Select::make('type')
-                        ->label('Type de service')
-                        ->placeholder('choisir')
-                        ->options([
-                            'babysitter' => 'babysitter',
-                            'menager' => 'menager',
-                        ])
-                        ->required(),
                     TextInput::make('prix_base')
                         ->required()
                         ->suffix('$ /mois')
