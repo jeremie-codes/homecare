@@ -41,6 +41,14 @@ class PricingForm
                                     'annee' => 'Par Année',
                                 ])
                                 ->required(),
+                            Select::make('type')
+                                ->label('Type d\'abonnement')
+                                ->options([
+                                    'Standard' => 'Standard',
+                                    'Populaire' => 'Populaire',
+                                    'Premium' => 'Premium',
+                                ])
+                                ->required(),
                             TagsInput::make('taches')
                                 ->label('Tâches du bouquet')
                                 ->placeholder('Cliquez sur Enter pour ajouter une tâche')

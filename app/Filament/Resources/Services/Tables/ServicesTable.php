@@ -23,7 +23,6 @@ class ServicesTable
                 }),
                 TextColumn::make('nom'),
                 TextColumn::make('description')->limit(30),
-                TextColumn::make('type'),
                 TextColumn::make('prix_base')->suffix('$ /mois'),
                 BooleanColumn::make('is_actif')->label('Visibilité'),
             ])

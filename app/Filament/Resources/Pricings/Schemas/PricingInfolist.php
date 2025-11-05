@@ -18,6 +18,7 @@ class PricingInfolist
                     ->money(),
                 TextEntry::make('taches'),
                 TextEntry::make('periode'),
+                TextEntry::make('type'),
                 IconEntry::make('is_active')
                 ->boolean(),
                 TextEntry::make('created_at')

@@ -573,7 +573,7 @@
                                     data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                     <div class="elementor-element elementor-element-a4bdf12 elementor-widget elementor-widget-heading"
                                         data-id="a4bdf12" data-element_type="widget" data-widget_type="heading.default">
-                                        <h6 class="elementor-heading-title elementor-size-default">{{ $pricing->service->type }}</h6>
+                                        <h6 class="elementor-heading-title elementor-size-default">{{ $pricing->type }}</h6>
                                     </div>
                                     <div class="elementor-element elementor-element-6bb9aa1 elementor-widget elementor-widget-heading"
                                         data-id="6bb9aa1" data-element_type="widget" data-widget_type="heading.default">
