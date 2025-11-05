@@ -559,13 +559,10 @@
                     </div>
                 </div>
 
-				<div class="px-5 align-items-center row" data-id="344c36f" data-element_type="container">
+				<div class="gap-1 px-5 align-items-center row" data-id="344c36f" data-element_type="container">
 
                     @foreach($pricings as $pricing)
-                         <div class="{{ $loop->first
-                            ? 'mt-2 elementor-element elementor-element-d5e1221 e-con-full e-flex e-con e-child col-md-4'
-                            : 'mt-2 elementor-element elementor-element-612b29f e-con-full e-flex e-con e-child col-md-4' }}"
-                            style="border-radius: 25px; border: 1px solid #041f2d;"
+                        <div class="mt-2 elementor-element elementor-element-612b29f e-con-full e-flex e-con e-child col-md-4" style="border-radius: 25px; border: 1px solid #041f2d;"
                             data-id="d5e1221" data-element_type="container">
                             <div class="elementor-element elementor-element-f0516a2 e-con-full e-flex e-con e-child"
                                 data-id="f0516a2" data-element_type="container"
