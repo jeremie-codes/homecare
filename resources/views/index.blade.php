@@ -594,7 +594,7 @@
                                                     <div class="elementor-element elementor-element-f91ad63 elementor-widget elementor-widget-heading"
                                                         data-id="f91ad63" data-element_type="widget"
                                                         data-widget_type="heading.default">
-                                                        <h4 class="elementor-heading-title elementor-size-default">A partir de $</h4>
+                                                        <h4 class="elementor-heading-title elementor-size-default">$</h4>
                                                     </div>
                                                     <div class="elementor-element elementor-element-35ec2df elementor-widget elementor-widget-heading"
                                                         data-id="35ec2df" data-element_type="widget"
