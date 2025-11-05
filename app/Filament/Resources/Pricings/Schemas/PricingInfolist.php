@@ -16,13 +16,15 @@ class PricingInfolist
                     ->numeric(),
                 TextEntry::make('price')
                     ->money(),
+                TextEntry::make('taches'),
                 TextEntry::make('periode'),
                 IconEntry::make('is_active')
-                    ->boolean(),
+                ->boolean(),
+                TextEntry::make('description')->columnSpanFull(),
                 TextEntry::make('created_at')
-                    ->dateTime(),
+                ->dateTime(),
                 TextEntry::make('updated_at')
-                    ->dateTime(),
+                ->dateTime(),
             ]);
     }
 }
