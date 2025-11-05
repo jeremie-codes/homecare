@@ -20,11 +20,11 @@ class PricingInfolist
                 TextEntry::make('periode'),
                 IconEntry::make('is_active')
                 ->boolean(),
-                TextEntry::make('description')->columnSpanFull(),
                 TextEntry::make('created_at')
                 ->dateTime(),
                 TextEntry::make('updated_at')
                 ->dateTime(),
+                TextEntry::make('description')->columnSpanFull(),
             ]);
     }
 }
