@@ -39,39 +39,37 @@ class ReservationsTable
                 TextColumn::make('created_at')->date()->label('Créé le'),
 
             ])
-            ->actions([
-                Action::make('accepter')
-                    ->label('Accepter la réservation')
-                    ->color('success')
-                    ->icon('heroicon-o-check-circle')
-                    ->visible(fn ($record) => $record->statut === 'en_attente')
-                    ->requiresConfirmation()
-                    ->action(function ($record) {
-                        $agent = $record->agent;
-
-                        // Met à jour l’agent
-                        $agent->update([
-                            'recommended_by' => $record->client->user_id,
-                            'disponibility' => 'occupé',
-                            'recommended_at' => Carbon::now(),
-                        ]);
-
-                        // Met à jour la réservation
-                        $record->update([
-                            'statut' => 'confirmée',
-                        ]);
-                    })
-                    ->after(fn() => Notification::make()
-                        ->title('Réservation acceptée')
-                        ->success()
-                        ->send()
-                    ),
-            ])
             ->filters([
                 ///TrashedFilter::make(),
             ])
             ->recordActions([
-                ViewAction::make()
+                //ViewAction::make(),
+                Action::make('accepter')
+                //->label('Accepter la réservation')
+                ->color('success')
+                ->icon('heroicon-o-check-circle')
+                ->visible(fn ($record) => $record->statut === 'en_attente')
+                ->requiresConfirmation()
+                ->action(function ($record) {
+                    $agent = $record->agent;
+
+                    // Met à jour l’agent
+                    $agent->update([
+                        'recommended_by' => $record->client->user_id,
+                        'disponibility' => 'occupé',
+                        'recommended_at' => Carbon::now(),
+                    ]);
+
+                    // Met à jour la réservation
+                    $record->update([
+                        'statut' => 'confirmée',
+                    ]);
+                })
+                ->after(fn() => Notification::make()
+                    ->title('Réservation acceptée')
+                    ->success()
+                    ->send()
+                ),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
