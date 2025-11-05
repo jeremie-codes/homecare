@@ -612,12 +612,12 @@
                                             <div class="elementor-element elementor-element-35ec2df elementor-widget elementor-widget-heading"
                                                 data-id="35ec2df" data-element_type="widget"
                                                 data-widget_type="heading.default">
-                                                <h2 class="elementor-heading-title elementor-size-default">199</h2>
+                                                <h2 class="elementor-heading-title elementor-size-default">{{ $pricing->price }}</h2>
                                             </div>
                                             <div class="elementor-element elementor-element-02479f9 elementor-widget elementor-widget-heading"
                                                 data-id="02479f9" data-element_type="widget"
                                                 data-widget_type="heading.default">
-                                                <h6 class="elementor-heading-title elementor-size-default">/Mensuel</h6>
+                                                <h6 class="elementor-heading-title elementor-size-default">/{{ $pricing->periode }}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -627,6 +627,7 @@
                                     <div class="elementor-element elementor-element-b7ef2b7 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
                                         data-id="b7ef2b7" data-element_type="widget" data-widget_type="icon-list.default">
                                         <ul class="elementor-icon-list-items">
+                                            @foreach($taches as $tache)
                                             <li class="elementor-icon-list-item">
                                                 <span class="elementor-icon-list-icon">
                                                     <svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
@@ -635,48 +636,9 @@
                                                             d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
                                                         </path>
                                                     </svg> </span>
-                                                <span class="elementor-icon-list-text">Nettoyage mensuel</span>
+                                                <span class="elementor-icon-list-text">{{ $tache }}</span>
                                             </li>
-                                            <li class="elementor-icon-list-item">
-                                                <span class="elementor-icon-list-icon">
-                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
-                                                        viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
-                                                        </path>
-                                                    </svg> </span>
-                                                <span class="elementor-icon-list-text">6 heures de travail par jour</span>
-                                            </li>
-                                            <li class="elementor-icon-list-item">
-                                                <span class="elementor-icon-list-icon">
-                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
-                                                        viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
-                                                        </path>
-                                                    </svg> </span>
-                                                <span class="elementor-icon-list-text">Observation de l'espace complet</span>
-                                            </li>
-                                            <li class="elementor-icon-list-item">
-                                                <span class="elementor-icon-list-icon">
-                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
-                                                        viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
-                                                        </path>
-                                                    </svg> </span>
-                                                <span class="elementor-icon-list-text">Consultation régulière</span>
-                                            </li>
-                                            <li class="elementor-icon-list-item">
-                                                <span class="elementor-icon-list-icon">
-                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
-                                                        viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
-                                                        </path>
-                                                    </svg> </span>
-                                                <span class="elementor-icon-list-text">Assistance Premium 24h/24 et 6j/7</span>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <div class="elementor-element elementor-element-a169283 e-con-full e-flex e-con e-child"
