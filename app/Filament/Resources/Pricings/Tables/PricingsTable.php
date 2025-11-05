@@ -27,12 +27,11 @@ class PricingsTable
                 TextColumn::make('taches')
                     ->formatStateUsing(function ($state) {
                         if (is_array($state)) {
-                            return implode(', ', $state); // transforme le tableau en texte lisible
+                            return count($state);
                         }
                         $decoded = json_decode($state, true);
-                        return is_array($decoded) ? implode(', ', $decoded) : $state;
+                        return count($decoded);
                     })
-                    ->limit(30)
                     ->searchable(),
                 IconColumn::make('is_active')
                     ->label('Actif')
