@@ -573,15 +573,15 @@
                                     data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                     <div class="elementor-element elementor-element-a4bdf12 elementor-widget elementor-widget-heading"
                                         data-id="a4bdf12" data-element_type="widget" data-widget_type="heading.default">
-                                        <h6 class="elementor-heading-title elementor-size-default">Soins de base</h6>
+                                        <h6 class="elementor-heading-title elementor-size-default">{{ $pricing->service->type }}</h6>
                                     </div>
                                     <div class="elementor-element elementor-element-6bb9aa1 elementor-widget elementor-widget-heading"
                                         data-id="6bb9aa1" data-element_type="widget" data-widget_type="heading.default">
-                                        <h4 class="elementor-heading-title elementor-size-default">Néttoyage Résidentiel</h4>
+                                        <h4 class="elementor-heading-title elementor-size-default">{{ $pricing->service->nom }}</h4>
                                     </div>
                                     <div class="elementor-element elementor-element-f6ab087 elementor-widget elementor-widget-heading"
                                         data-id="f6ab087" data-element_type="widget" data-widget_type="heading.default">
-                                        <h6 class="elementor-heading-title elementor-size-default">Idéal pour les petits biens ou les bureaux nécessitant une nettoyage essentielle.</h6>
+                                        <h6 class="elementor-heading-title elementor-size-default">{{ $pricing->service->description }}</h6>
                                     </div>
                                     <div class="elementor-element elementor-element-6c20d9e e-con-full e-flex e-con e-child"
                                         data-id="6c20d9e" data-element_type="container">
