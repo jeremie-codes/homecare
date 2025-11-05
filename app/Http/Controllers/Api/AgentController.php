@@ -26,7 +26,7 @@ class AgentController extends Controller
     public function show($id)
     {
         try {
-            $agent = Agent::with(['user', 'service'])->findOrFail($id);
+            $agent = Agent::with(['user', 'service', 'category'])->findOrFail($id);
             return response()->json($agent);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Agent introuvable', 'message' => $e->getMessage()], 404);
