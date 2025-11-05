@@ -26,7 +26,6 @@ class PricingsTable
                     ->searchable(),
                 TextColumn::make('taches')
                     ->limit(3)
-                    ->collect()
                     ->searchable(),
                 IconColumn::make('is_active')
                     ->label('Actif')
