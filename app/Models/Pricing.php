@@ -15,6 +15,7 @@ class Pricing extends Model
         'periode',
         'taches',
         'is_active',
+        'type',
         'description',
     ];
 
