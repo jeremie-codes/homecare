@@ -627,7 +627,7 @@
                                     <div class="elementor-element elementor-element-b7ef2b7 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
                                         data-id="b7ef2b7" data-element_type="widget" data-widget_type="icon-list.default">
                                         <ul class="elementor-icon-list-items">
-                                            @foreach($princing->taches  as $tache)
+                                            @foreach($pricing->taches  as $tache)
                                             <li class="elementor-icon-list-item">
                                                 <span class="elementor-icon-list-icon">
                                                     <svg aria-hidden="true" class="e-font-icon-svg e-fas-check-circle"
