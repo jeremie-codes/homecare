@@ -24,6 +24,8 @@ class PricingResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Pricing';
 
+    protected static ?int $navigationSort = 4;
+
     public static function form(Schema $schema): Schema
     {
         return PricingForm::configure($schema);

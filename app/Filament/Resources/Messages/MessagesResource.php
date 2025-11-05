@@ -26,6 +26,11 @@ class MessagesResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Message';
 
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
+
     public static function form(Schema $schema): Schema
     {
         return MessagesForm::configure($schema);

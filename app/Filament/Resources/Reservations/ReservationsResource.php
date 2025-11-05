@@ -26,6 +26,8 @@ class ReservationsResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Reservation';
 
+    protected static ?int $navigationSort = 3;
+
     public static function form(Schema $schema): Schema
     {
         return ReservationsForm::configure($schema);

@@ -22,6 +22,8 @@ class TachesResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Tache';
 
+    protected static ?int $navigationSort = 2;
+
     public static function form(Schema $schema): Schema
     {
         return TachesForm::configure($schema);

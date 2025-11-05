@@ -15,13 +15,22 @@ class Agent extends Model
     ];
 
     protected $casts = [
-        'recommended_by' => 'boolean',
         'recommended_at' => 'datetime',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function recommendedBy()
+    {
+        return $this->belongsTo(User::class, 'recommended_by');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
     public function service()

@@ -29,16 +29,23 @@ class ReservationsForm
                             Select::make('client_id')
                                 ->label('Client')
                                 ->placeholder('Choisir')
-                                ->options(Client::with('user')
-                                ->pluck('user_id', 'id'))
-                                ->required(false),
-
+                                ->options(
+                                    \App\Models\Client::with('user')
+                                        ->get()
+                                        ->pluck('user.name', 'id')
+                                )
+                                ->searchable()
+                                ->required(),
                             Select::make('agent_id')
                                 ->label('Agent')
                                 ->placeholder('Choisir')
-                                ->options(Agent::with('user')
-                                ->pluck('user_id', 'id'))
-                                ->required(false),
+                                ->searchable()
+                                ->options(
+                                    \App\Models\Agent::with('user')
+                                        ->get()
+                                        ->pluck('user.name', 'id')
+                                )
+                                ->required(),
 
                             Select::make('service_id')
                                 ->placeholder('Choisir')

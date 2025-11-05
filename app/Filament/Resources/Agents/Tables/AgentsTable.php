@@ -21,25 +21,13 @@ class AgentsTable
                     ->sortable(),
                 // TextColumn::make('service_id')->numeric()->sortable(),
                 TextColumn::make('type')->searchable(),
-                TextColumn::make('experience')
-                    ->state(function ($record) {
-                        return $record->experience == 0 ? $record->experience . '' : $record->experience . ' an(s)';
-                    })
+                TextColumn::make('rating')->icon('heroicon-o-star')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('rating')->state(function ($record) {
-                    return $record->rating . '/5';
-                })
-                ->numeric()
-                ->sortable(),
                 IconColumn::make('is_badges')
                     ->label('Badge')
                     ->boolean(),
-                TextColumn::make('created_at')
-                    ->label('Créé le')
-                    ->date()
-                    ->sortable()
-                    ->toggleable()
+                TextColumn::make('recommendedBy.name')->label('Recommandé')->searchable(),
             ])
             ->filters([
                 //

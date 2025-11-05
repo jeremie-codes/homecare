@@ -20,9 +20,11 @@ class PlainteResource extends Resource
 {
     protected static ?string $model = Rapport::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedQuestionMarkCircle;
 
-    protected static ?string $recordTitleAttribute = 'Plaintes';
+    protected static ?string $label = 'Plaintes';
+
+    protected static ?int $navigationSort = 6;
 
     public static function form(Schema $schema): Schema
     {

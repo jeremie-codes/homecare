@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('agents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->bigInteger('service_id')->nullable()->constrained('services')->onDelete('set null');
+            $table->bigInteger('service_id')->constrained('services')->onDelete('set null');
             $table->enum('type', ['babysitter', 'menager']);
             $table->integer('experience')->default(0);
             $table->integer('rating')->default(0);

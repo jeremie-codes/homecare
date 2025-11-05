@@ -37,7 +37,7 @@ return new class extends Migration
             $table->boolean('urgence')->default(false);
 
             // Suivi
-            $table->enum('statut', ['en attente','confirmée','annulée'])->default('en attente');
+            $table->enum('statut', ['en attente','confirmée','annulée', 'terminée'])->default('en attente');
 
             $table->timestamps();
             $table->softDeletes();

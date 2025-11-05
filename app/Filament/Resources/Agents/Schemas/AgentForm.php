@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Agents\Schemas;
 use App\Models\User;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\{
+    DatePicker,
     FileUpload,
     TextInput,
     Select,
@@ -18,15 +19,18 @@ class AgentForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
+            ->columns(3)
             ->components([
                 // SECTION AGENT
-                Section::make('Détails de l’agent')
+                Section::make('Informations de l’agent')
+                    ->columns(2)
+                    ->columnSpanFull()
                     ->schema([
                         Select::make('user_id')
                             ->label('Compte utilisateur')
                             ->options(User::where('role', 'agent')->pluck('name', 'id'))
                             ->placeholder("Choisir")
-                            ->belowContent("Soit cliquer sur + pour ajoute un compte")
+                            ->belowContent("Soit cliquer sur + pour ajoute un utilisateur pour cet agent")
                             ->createOptionForm([
                                 FileUpload::make('avatar')
                                     ->label('Photo de profil (optionnel)')
@@ -112,13 +116,22 @@ class AgentForm
                                     ->modalWidth('lg');
                             }),
 
-                        Select::make('type')
+                        Select::make('category_id')
                             ->label('Type d’agent')
-                            ->options([
-                                'babysitter' => 'Babysitter',
-                                'menager' => 'Ménager',
-                            ])
-                            ->required(),
+                            ->relationship('category', 'name')
+                            ->placeholder("Choisir")
+                            ->belowContent("Soit cliquer sur + pour créer une catégorie")
+                            ->required()
+                            ->createOptionForm([
+                                TextInput::make('name')
+                                    ->label('Nom du type')
+                                    ->required()
+                            ])->createOptionAction(function (Action $action) {
+                                return $action
+                                    ->modalHeading('Création du type d\'agent')
+                                    ->modalSubmitActionLabel('Créer')
+                                    ->modalWidth('lg');
+                            }),
 
                         TextInput::make('experience')
                             ->label('Expérience (en années)')
@@ -162,9 +175,25 @@ class AgentForm
                             ->label('Attribuer un badge')
                             ->default(false),
 
+                    ]),
+
+                Section::make('Assignation')
+                    ->columns(1)
+                    ->columnSpanFull()
+                    ->schema([
+                        Select::make('recommended_by')
+                            ->label('Récommandé par')
+                            ->afterLabel("Laissez vide si non recommandé par un client")
+                            ->relationship('recommendedBy', 'name')
+                            ->reactive()
+                            ->placeholder("Choisir un client"),
+
+                        DatePicker::make('recommended_at')
+                            ->label('Date de recommandation')
+                            ->date('Y-m-d')
+                            ->visible(fn ($get) => $get('recommended_by') != null)
+                            ->required(),
                     ])
-                    ->columns(2)
-                    ->columnSpan(['md' => 2]),
             ]);
     }
 }

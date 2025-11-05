@@ -24,6 +24,8 @@ class ServicesResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Service';
 
+    protected static ?int $navigationSort = 1;
+
     public static function form(Schema $schema): Schema
     {
         return ServicesForm::configure($schema);

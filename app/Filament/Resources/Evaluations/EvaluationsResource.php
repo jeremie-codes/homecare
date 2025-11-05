@@ -26,6 +26,8 @@ class EvaluationsResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Evaluation';
 
+    protected static ?int $navigationSort = 4;
+
     public static function form(Schema $schema): Schema
     {
         return EvaluationsForm::configure($schema);

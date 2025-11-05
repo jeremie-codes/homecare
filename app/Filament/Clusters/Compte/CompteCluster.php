@@ -9,4 +9,6 @@ use Filament\Support\Icons\Heroicon;
 class CompteCluster extends Cluster
 {
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUsers;
+    protected static ?int $navigationSort = 6;
+
 }
