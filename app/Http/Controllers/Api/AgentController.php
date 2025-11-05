@@ -11,7 +11,7 @@ class AgentController extends Controller
     public function getByService($service_id)
     {
         try {
-            $agents = Agent::with('user')
+            $agents = Agent::with('user', 'category')
                 ->where('service_id', $service_id)
                 ->where('statut', 'disponible')
                 ->where('is_badges', true)
