@@ -20,7 +20,7 @@ class AgentsTable
                     ->searchable()
                     ->sortable(),
                 // TextColumn::make('service_id')->numeric()->sortable(),
-                TextColumn::make('type')->searchable(),
+                TextColumn::make('category.name')->label('Type')->searchable(),
                 TextColumn::make('rating')->icon('heroicon-o-star')
                     ->numeric()
                     ->sortable(),
