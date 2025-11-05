@@ -25,7 +25,14 @@ class PricingsTable
                 TextColumn::make('periode')
                     ->searchable(),
                 TextColumn::make('taches')
-                    ->limit(3)
+                    ->formatStateUsing(function ($state) {
+                        if (is_array($state)) {
+                            return implode(', ', $state); // transforme le tableau en texte lisible
+                        }
+                        $decoded = json_decode($state, true);
+                        return is_array($decoded) ? implode(', ', $decoded) : $state;
+                    })
+                    ->limit(30)
                     ->searchable(),
                 IconColumn::make('is_active')
                     ->label('Actif')
