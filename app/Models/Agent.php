@@ -10,8 +10,13 @@ class Agent extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'service_id', 'type', 'experience', 'disponibilite', 'adresse', 'statut', 'is_recommended', 'rating',
+        'user_id', 'service_id', 'type', 'experience', 'disponibilite', 'adresse', 'statut', 'rating',
         'is_badges', 'recommended_at', 'recommended_by'
+    ];
+
+    protected $casts = [
+        'recommended_by' => 'boolean',
+        'recommended_at' => 'datetime',
     ];
 
     public function user()
@@ -28,6 +33,6 @@ class Agent extends Model
     {
         return $this->hasMany(Evaluation::class);
     }
-    
+
 }
 

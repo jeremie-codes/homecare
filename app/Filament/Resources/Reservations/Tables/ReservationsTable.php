@@ -2,12 +2,16 @@
 
 namespace App\Filament\Resources\Reservations\Tables;
 
+use Carbon\Carbon;
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
+use Filament\Notifications\Notification;
+use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Columns\BooleanColumn;
 use Filament\Tables\Columns\TextColumn;
 //use Filament\Tables\Filters\TrashedFilter;
@@ -27,14 +31,45 @@ class ReservationsTable
                 }),
                 BooleanColumn::make('transport_inclus'),
                 BooleanColumn::make('urgence'),
+                BadgeColumn::make('statut')->colors([
+                    'warning' => 'en attente',
+                    'success' => 'confirmée',
+                    'danger' => 'annulée',
+                ]),
                 TextColumn::make('created_at')->date()->label('Créé le'),
+
             ])
             ->filters([
                 ///TrashedFilter::make(),
             ])
             ->recordActions([
                 ViewAction::make(),
-                EditAction::make(),
+                Action::make('accepter')
+                    ->label('Accepter la réservation')
+                    ->color('success')
+                    ->icon('heroicon-o-check-circle')
+                    ->visible(fn ($record) => $record->statut === 'en_attente')
+                    ->requiresConfirmation()
+                    ->action(function ($record) {
+                        $agent = $record->agent;
+
+                        // Met à jour l’agent
+                        $agent->update([
+                            'recommended_by' => $record->client->user_id,
+                            'disponibility' => 'occupé',
+                            'recommended_at' => Carbon::now(),
+                        ]);
+
+                        // Met à jour la réservation
+                        $record->update([
+                            'statut' => 'confirmée',
+                        ]);
+                    })
+                    ->after(fn() => Notification::make()
+                        ->title('Réservation acceptée')
+                        ->success()
+                        ->send()
+                    ),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
