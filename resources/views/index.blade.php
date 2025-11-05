@@ -559,7 +559,7 @@
                     </div>
                 </div>
 
-				<div class="gap-1 px-5 align-items-center row" data-id="344c36f" data-element_type="container">
+				<div class="px-5 align-items-center row" data-id="344c36f" data-element_type="container">
 
                     @foreach($pricings as $pricing)
                     <div class="col-md-4">
@@ -589,10 +589,23 @@
                                             data-id="6db0b5e" data-element_type="container">
                                             <div class="elementor-element elementor-element-d64f91a elementor-mobile-align-center elementor-widget elementor-widget-button"
                                                 data-id="d64f91a" data-element_type="widget" data-widget_type="button.default">
-                                                <div class="p-0 text-center elementor-element elementor-element-02479f9 elementor-widget elementor-widget-heading"
-                                                    data-id="02479f9" data-element_type="widget"
-                                                    data-widget_type="heading.default">
-                                                    <h6 class="elementor-heading-title elementor-size-default">A partir de </h6>
+                                                <div class="elementor-element elementor-element-30983d1 e-con-full e-flex e-con e-child"
+                                                    data-id="30983d1" data-element_type="container">
+                                                    <div class="elementor-element elementor-element-f91ad63 elementor-widget elementor-widget-heading"
+                                                        data-id="f91ad63" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <h4 class="elementor-heading-title elementor-size-default">A partir de $</h4>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-35ec2df elementor-widget elementor-widget-heading"
+                                                        data-id="35ec2df" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <h4 class="elementor-heading-title elementor-size-default">{{ $pricing->price }}</h4>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-02479f9 elementor-widget elementor-widget-heading"
+                                                        data-id="02479f9" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <h6 class="elementor-heading-title elementor-size-default">/{{ $pricing->periode }}</h6>
+                                                    </div>
                                                 </div>
                                                 <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-shrink"
                                                     href="#">
@@ -600,24 +613,6 @@
                                                         <span class="elementor-button-text">Réservez maintenant</span>
                                                     </span>
                                                 </a>
-                                            </div>
-                                        </div>
-                                        <div class="elementor-element elementor-element-30983d1 e-con-full e-flex e-con e-child"
-                                            data-id="30983d1" data-element_type="container">
-                                            <div class="elementor-element elementor-element-f91ad63 elementor-widget elementor-widget-heading"
-                                                data-id="f91ad63" data-element_type="widget"
-                                                data-widget_type="heading.default">
-                                                <h4 class="elementor-heading-title elementor-size-default">$</h4>
-                                            </div>
-                                            <div class="elementor-element elementor-element-35ec2df elementor-widget elementor-widget-heading"
-                                                data-id="35ec2df" data-element_type="widget"
-                                                data-widget_type="heading.default">
-                                                <h4 class="elementor-heading-title elementor-size-default">{{ $pricing->price }}</h4>
-                                            </div>
-                                            <div class="elementor-element elementor-element-02479f9 elementor-widget elementor-widget-heading"
-                                                data-id="02479f9" data-element_type="widget"
-                                                data-widget_type="heading.default">
-                                                <h6 class="elementor-heading-title elementor-size-default">/{{ $pricing->periode }}</h6>
                                             </div>
                                         </div>
                                     </div>
