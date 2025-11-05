@@ -25,14 +25,25 @@ class PricingsTable
                 TextColumn::make('periode')
                     ->searchable(),
                 TextColumn::make('taches')
+                    ->label('Nombre de tâches')
                     ->formatStateUsing(function ($state) {
+                        if (empty($state)) {
+                            return 0;
+                        }
+
                         if (is_array($state)) {
                             return count($state);
                         }
+
                         $decoded = json_decode($state, true);
-                        return count($decoded);
-                    })
-                    ->searchable(),
+
+                        if (is_array($decoded)) {
+                            return count($decoded);
+                        }
+
+                        return 0;
+                    }),
+
                 IconColumn::make('is_active')
                     ->label('Actif')
                     ->boolean(),
