@@ -109,6 +109,7 @@
     </style>
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></head>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
 <body style="overflow-x: hidden;" class="wp-singular envato_tk_templates-template envato_tk_templates-template-elementor_header_footer single single-envato_tk_templates postid-5 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-full-width elementor-kit-3 elementor-page elementor-page-5">
 
@@ -124,8 +125,7 @@
                 <div class="e-con-inner">
                     <div class="gap-2 pe-5 elementor-element elementor-element-dab0739 e-con-full e-flex e-con e-child"
                         data-id="dab0739" data-element_type="container">
-                        <div class="elementor-element elementor-element-f229283 e-con-full e-flex e-con e-child"
-                            data-id="f229283" data-element_type="container">
+                        <div class="elementor-element elementor-element-f229283 e-con-full e-flex e-con e-child" data-id="f229283" data-element_type="container">
                             <div class="elementor-element elementor-element-ba876c0 e-con-full e-flex e-con e-child"
                                 data-id="ba876c0" data-element_type="container">
                                 <div class="elementor-element elementor-element-91d0a33 elementor-widget elementor-widget-image"
@@ -150,7 +150,7 @@
                                             </button>
 
                                             <div id="ekit-megamenu-cleasy-menu" class="elementskit-menu-container elementskit-menu-offcanvas-elements elementskit-navbar-nav-default ekit-nav-menu-one-page-no ekit-nav-dropdown-hover">
-                                                <ul id="menu-cleasy-menu" class="elementskit-navbar-nav elementskit-menu-po-center submenu-click-on-icon">
+                                                <ul id="menu-cleasy-menu" class="text-right elementskit-navbar-nav elementskit-menu-po-center submenu-click-on-icon">
                                                     <li id="menu-item-558" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-558 nav-item elementskit-mobile-builder-content active" data-vertical-menu=750px>
                                                         <a href="/" class="ekit-menu-nav-link active">Accueil</a>
                                                     </li>
@@ -219,6 +219,39 @@
     </div>
 
     @yield('content')
+
+    @if(session()->has('error'))
+    <div style="position: fixed; top: 150px; right: 50px;">
+        <div class="relative px-4 py-3 text-red-500 bg-red-100 border border-red-400 rounded alert" role="alert">
+            <strong class="font-bold">Erreur</strong>
+            <span class="block sm:inline">{{ session()->get('error') }}</span>
+        </div>
+        <script>
+            var alertList = document.querySelectorAll(".alert");
+            alertList.forEach(function (alert) {
+            setTimeout(() => {
+                alert.classList.add("hidden");
+            }, 6000);
+            });
+        </script>
+    </div>
+    @endif
+
+    @if(session()->has('success'))
+    <div style="position: fixed; top: 150px; right: 50px;">
+        <div class="relative px-4 py-3 text-green-500 bg-green-100 border border-green-400 rounded alert" role="alert">
+            <span class="block sm:inline">{{ session()->get('success') }}</span>
+        </div>
+        <script>
+            var alertList = document.querySelectorAll(".alert");
+            alertList.forEach(function (alert) {
+            setTimeout(() => {
+                alert.classList.add("hidden");
+            }, 6000);
+            });
+        </script>
+    </div>
+    @endif
 
     <div class="ekit-template-content-markup ekit-template-content-footer ekit-template-content-theme-support">
         <div data-elementor-type="wp-post" data-elementor-id="717" class="elementor elementor-717">
