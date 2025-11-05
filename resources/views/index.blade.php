@@ -533,6 +533,7 @@
     </div>
 
     {{-- Pricing --}}
+    @if($pricings->count() > 0)
     <div data-elementor-type="wp-post" data-elementor-id="1021" class="elementor elementor-1021">
 		<div class="elementor-element elementor-element-bb2388d e-flex e-con-boxed e-con e-parent" data-id="bb2388d"
 			data-element_type="container">
@@ -558,11 +559,10 @@
                     </div>
                 </div>
 
-
 				<div class="elementor-element elementor-element-344c36f e-con-full e-flex e-con e-child d-md-flex align-items-center px-md-5"
 					data-id="344c36f" data-element_type="container">
 
-                    {{-- @forelse($pricings as $pricing)
+                    @foreach($pricings as $pricing)
                         <div class="elementor-element elementor-element-d5e1221 e-con-full e-flex e-con e-child" style="border-radius: 25px; border: 1px solid #041f2d;"
                             data-id="d5e1221" data-element_type="container">
                             <div class="elementor-element elementor-element-f0516a2 e-con-full e-flex e-con e-child"
@@ -697,11 +697,7 @@
                                 </div>
                             </div>
                         </div>
-                    @empty --}}
-                        <div class="text-center border row">
-                            <p class="text-center">Aucun service disponible</p>
-                        </div>
-                    {{-- @endforeach --}}
+                    @endforeach
 
 
 				</div>
@@ -709,6 +705,7 @@
 			</div>
 		</div>
 	</div>
+    @endif
 
     {{-- Partenaire --}}
     <div class="px-md-5 elementor-element elementor-element-a68870b e-flex e-con-boxed e-con e-parent" data-id="a68870b"
