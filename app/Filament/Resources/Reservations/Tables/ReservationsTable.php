@@ -29,7 +29,7 @@ class ReservationsTable
                 TextColumn::make('duree')->state(function ($record) {
                     return $record->duree . ' ' . $record->frequence;
                 }),
-                BooleanColumn::make('transport_inclus'),
+                //BooleanColumn::make('transport_inclus'),
                 BooleanColumn::make('urgence'),
                 BadgeColumn::make('statut')->colors([
                     'warning' => 'en attente',
@@ -39,11 +39,7 @@ class ReservationsTable
                 TextColumn::make('created_at')->date()->label('Créé le'),
 
             ])
-            ->filters([
-                ///TrashedFilter::make(),
-            ])
-            ->recordActions([
-                ViewAction::make(),
+            ->actions([
                 Action::make('accepter')
                     ->label('Accepter la réservation')
                     ->color('success')
@@ -70,6 +66,12 @@ class ReservationsTable
                         ->success()
                         ->send()
                     ),
+            ])
+            ->filters([
+                ///TrashedFilter::make(),
+            ])
+            ->recordActions([
+                ViewAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
