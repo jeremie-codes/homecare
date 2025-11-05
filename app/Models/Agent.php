@@ -10,7 +10,7 @@ class Agent extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'service_id', 'type', 'experience', 'disponibilite', 'adresse', 'statut', 'rating',
+        'user_id', 'service_id', 'category_id', 'type', 'experience', 'disponibilite', 'adresse', 'statut', 'rating',
         'is_badges', 'recommended_at', 'recommended_by'
     ];
 
