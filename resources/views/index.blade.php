@@ -457,7 +457,7 @@
                             data-id="02752aa" data-element_type="widget" data-widget_type="image-box.default">
                             <div class="elementor-image-box-wrapper">
                                 <div class="elementor-image-box-content">
-                                    <h4 class="elementor-image-box-title">Téléchargez l’application HomeCare</h4>
+                                    <h4 class="elementor-image-box-title">Téléchargez l’application powercare</h4>
                                     <p class="elementor-image-box-description">
                                         Disponible sur Android (et iOS si tu veux l’ajouter), créez votre compte en quelques clics.
                                     </p>

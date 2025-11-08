@@ -345,7 +345,7 @@
 
                                                 <h6 class="elementor-icon-box-title">
                                                     <span>
-                                                        info@homecare.com </span>
+                                                        info@powercare-drc.com </span>
                                                 </h6>
 
 
@@ -590,7 +590,7 @@
                             data-id="67f5cf6" data-element_type="container">
                             <div class="elementor-element elementor-element-8db17b5 elementor-widget elementor-widget-heading"
                                 data-id="8db17b5" data-element_type="widget" data-widget_type="heading.default">
-                                <h6 class="elementor-heading-title elementor-size-default">HomeCare, 2025 © All Rights
+                                <h6 class="elementor-heading-title elementor-size-default">powercare-drc, 2025 © All Rights
                                     Reserved</h6>
                             </div>
                         </div>
