@@ -44,10 +44,225 @@
 				</div>
 			</div>
 
-			<div class="px-5 row"
+			<div class="px-2 px-md-5 row"
 				data-id="ef8c284" data-element_type="container">
 				@forelse($agents as $agent)
-                <div class="elementor-element elementor-element-7c519e0 e-con-full animated-fast e-flex elementor-invisible e-con e-child col-md-4"
+                <div class="mt-3 elementor-element elementor-element-7c519e0 e-con-full animated-fast e-flex elementor-invisible e-con e-child col-md-4"
+					data-id="7c519e0" data-element_type="container"
+					data-settings="{&quot;animation&quot;:&quot;slideInUp&quot;}">
+					<div class="elementor-element elementor-element-8964603 elementor-widget elementor-widget-image"
+						data-id="8964603" data-element_type="widget" data-widget_type="image.default">
+						<img fetchpriority="high" decoding="async" width="600" height="700"
+							src="{{ asset($agent->user->avatar) }}"
+							class="attachment-full size-full wp-image-1253" alt=""
+							srcset="{{ asset($agent->user->avatar) }}"
+							sizes="(max-width: 600px) 100vw, 600px" />
+					</div>
+					<div class="elementor-element elementor-element-289335b e-con-full e-flex e-con e-child"
+						data-id="289335b" data-element_type="container"
+						data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+						<div class="elementor-element elementor-element-eb07d29 e-con-full e-flex e-con e-child"
+							data-id="eb07d29" data-element_type="container">
+							<div class="elementor-element elementor-element-2b0badd e-con-full e-flex e-con e-child"
+								data-id="2b0badd" data-element_type="container">
+								<div class="elementor-element elementor-element-c9f4841 elementor-widget elementor-widget-image"
+									data-id="c9f4841" data-element_type="widget" data-widget_type="image.default">
+									<img decoding="async" width="300" height="300"
+										src="{{ asset('icons/Blink.png') }}"
+										class="attachment-full size-full wp-image-302" alt=""
+										srcset="{{ asset('icons/Blink.png') }}"
+										sizes="(max-width: 300px) 100vw, 300px" />
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-2df65b9 e-con-full e-flex e-con e-child"
+								data-id="2df65b9" data-element_type="container">
+								<div class="elementor-element elementor-element-427cdf4 elementor-widget elementor-widget-heading"
+									data-id="427cdf4" data-element_type="widget" data-widget_type="heading.default">
+									<div class="elementor-heading-title elementor-size-default">{{ $agent->user->name }}
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-10c7d8f elementor-widget elementor-widget-heading"
+									data-id="10c7d8f" data-element_type="widget" data-widget_type="heading.default">
+									<h6 class="elementor-heading-title elementor-size-default">{{ $agent->category->name }}</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="mt-3 elementor-element elementor-element-7c519e0 e-con-full animated-fast e-flex elementor-invisible e-con e-child col-md-4"
+					data-id="7c519e0" data-element_type="container"
+					data-settings="{&quot;animation&quot;:&quot;slideInUp&quot;}">
+					<div class="elementor-element elementor-element-8964603 elementor-widget elementor-widget-image"
+						data-id="8964603" data-element_type="widget" data-widget_type="image.default">
+						<img fetchpriority="high" decoding="async" width="600" height="700"
+							src="{{ asset($agent->user->avatar) }}"
+							class="attachment-full size-full wp-image-1253" alt=""
+							srcset="{{ asset($agent->user->avatar) }}"
+							sizes="(max-width: 600px) 100vw, 600px" />
+					</div>
+					<div class="elementor-element elementor-element-289335b e-con-full e-flex e-con e-child"
+						data-id="289335b" data-element_type="container"
+						data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+						<div class="elementor-element elementor-element-eb07d29 e-con-full e-flex e-con e-child"
+							data-id="eb07d29" data-element_type="container">
+							<div class="elementor-element elementor-element-2b0badd e-con-full e-flex e-con e-child"
+								data-id="2b0badd" data-element_type="container">
+								<div class="elementor-element elementor-element-c9f4841 elementor-widget elementor-widget-image"
+									data-id="c9f4841" data-element_type="widget" data-widget_type="image.default">
+									<img decoding="async" width="300" height="300"
+										src="{{ asset('icons/Blink.png') }}"
+										class="attachment-full size-full wp-image-302" alt=""
+										srcset="{{ asset('icons/Blink.png') }}"
+										sizes="(max-width: 300px) 100vw, 300px" />
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-2df65b9 e-con-full e-flex e-con e-child"
+								data-id="2df65b9" data-element_type="container">
+								<div class="elementor-element elementor-element-427cdf4 elementor-widget elementor-widget-heading"
+									data-id="427cdf4" data-element_type="widget" data-widget_type="heading.default">
+									<div class="elementor-heading-title elementor-size-default">{{ $agent->user->name }}
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-10c7d8f elementor-widget elementor-widget-heading"
+									data-id="10c7d8f" data-element_type="widget" data-widget_type="heading.default">
+									<h6 class="elementor-heading-title elementor-size-default">{{ $agent->category->name }}</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="mt-3 elementor-element elementor-element-7c519e0 e-con-full animated-fast e-flex elementor-invisible e-con e-child col-md-4"
+					data-id="7c519e0" data-element_type="container"
+					data-settings="{&quot;animation&quot;:&quot;slideInUp&quot;}">
+					<div class="elementor-element elementor-element-8964603 elementor-widget elementor-widget-image"
+						data-id="8964603" data-element_type="widget" data-widget_type="image.default">
+						<img fetchpriority="high" decoding="async" width="600" height="700"
+							src="{{ asset($agent->user->avatar) }}"
+							class="attachment-full size-full wp-image-1253" alt=""
+							srcset="{{ asset($agent->user->avatar) }}"
+							sizes="(max-width: 600px) 100vw, 600px" />
+					</div>
+					<div class="elementor-element elementor-element-289335b e-con-full e-flex e-con e-child"
+						data-id="289335b" data-element_type="container"
+						data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+						<div class="elementor-element elementor-element-eb07d29 e-con-full e-flex e-con e-child"
+							data-id="eb07d29" data-element_type="container">
+							<div class="elementor-element elementor-element-2b0badd e-con-full e-flex e-con e-child"
+								data-id="2b0badd" data-element_type="container">
+								<div class="elementor-element elementor-element-c9f4841 elementor-widget elementor-widget-image"
+									data-id="c9f4841" data-element_type="widget" data-widget_type="image.default">
+									<img decoding="async" width="300" height="300"
+										src="{{ asset('icons/Blink.png') }}"
+										class="attachment-full size-full wp-image-302" alt=""
+										srcset="{{ asset('icons/Blink.png') }}"
+										sizes="(max-width: 300px) 100vw, 300px" />
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-2df65b9 e-con-full e-flex e-con e-child"
+								data-id="2df65b9" data-element_type="container">
+								<div class="elementor-element elementor-element-427cdf4 elementor-widget elementor-widget-heading"
+									data-id="427cdf4" data-element_type="widget" data-widget_type="heading.default">
+									<div class="elementor-heading-title elementor-size-default">{{ $agent->user->name }}
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-10c7d8f elementor-widget elementor-widget-heading"
+									data-id="10c7d8f" data-element_type="widget" data-widget_type="heading.default">
+									<h6 class="elementor-heading-title elementor-size-default">{{ $agent->category->name }}</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="mt-3 elementor-element elementor-element-7c519e0 e-con-full animated-fast e-flex elementor-invisible e-con e-child col-md-4"
+					data-id="7c519e0" data-element_type="container"
+					data-settings="{&quot;animation&quot;:&quot;slideInUp&quot;}">
+					<div class="elementor-element elementor-element-8964603 elementor-widget elementor-widget-image"
+						data-id="8964603" data-element_type="widget" data-widget_type="image.default">
+						<img fetchpriority="high" decoding="async" width="600" height="700"
+							src="{{ asset($agent->user->avatar) }}"
+							class="attachment-full size-full wp-image-1253" alt=""
+							srcset="{{ asset($agent->user->avatar) }}"
+							sizes="(max-width: 600px) 100vw, 600px" />
+					</div>
+					<div class="elementor-element elementor-element-289335b e-con-full e-flex e-con e-child"
+						data-id="289335b" data-element_type="container"
+						data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+						<div class="elementor-element elementor-element-eb07d29 e-con-full e-flex e-con e-child"
+							data-id="eb07d29" data-element_type="container">
+							<div class="elementor-element elementor-element-2b0badd e-con-full e-flex e-con e-child"
+								data-id="2b0badd" data-element_type="container">
+								<div class="elementor-element elementor-element-c9f4841 elementor-widget elementor-widget-image"
+									data-id="c9f4841" data-element_type="widget" data-widget_type="image.default">
+									<img decoding="async" width="300" height="300"
+										src="{{ asset('icons/Blink.png') }}"
+										class="attachment-full size-full wp-image-302" alt=""
+										srcset="{{ asset('icons/Blink.png') }}"
+										sizes="(max-width: 300px) 100vw, 300px" />
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-2df65b9 e-con-full e-flex e-con e-child"
+								data-id="2df65b9" data-element_type="container">
+								<div class="elementor-element elementor-element-427cdf4 elementor-widget elementor-widget-heading"
+									data-id="427cdf4" data-element_type="widget" data-widget_type="heading.default">
+									<div class="elementor-heading-title elementor-size-default">{{ $agent->user->name }}
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-10c7d8f elementor-widget elementor-widget-heading"
+									data-id="10c7d8f" data-element_type="widget" data-widget_type="heading.default">
+									<h6 class="elementor-heading-title elementor-size-default">{{ $agent->category->name }}</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="mt-3 elementor-element elementor-element-7c519e0 e-con-full animated-fast e-flex elementor-invisible e-con e-child col-md-4"
+					data-id="7c519e0" data-element_type="container"
+					data-settings="{&quot;animation&quot;:&quot;slideInUp&quot;}">
+					<div class="elementor-element elementor-element-8964603 elementor-widget elementor-widget-image"
+						data-id="8964603" data-element_type="widget" data-widget_type="image.default">
+						<img fetchpriority="high" decoding="async" width="600" height="700"
+							src="{{ asset($agent->user->avatar) }}"
+							class="attachment-full size-full wp-image-1253" alt=""
+							srcset="{{ asset($agent->user->avatar) }}"
+							sizes="(max-width: 600px) 100vw, 600px" />
+					</div>
+					<div class="elementor-element elementor-element-289335b e-con-full e-flex e-con e-child"
+						data-id="289335b" data-element_type="container"
+						data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+						<div class="elementor-element elementor-element-eb07d29 e-con-full e-flex e-con e-child"
+							data-id="eb07d29" data-element_type="container">
+							<div class="elementor-element elementor-element-2b0badd e-con-full e-flex e-con e-child"
+								data-id="2b0badd" data-element_type="container">
+								<div class="elementor-element elementor-element-c9f4841 elementor-widget elementor-widget-image"
+									data-id="c9f4841" data-element_type="widget" data-widget_type="image.default">
+									<img decoding="async" width="300" height="300"
+										src="{{ asset('icons/Blink.png') }}"
+										class="attachment-full size-full wp-image-302" alt=""
+										srcset="{{ asset('icons/Blink.png') }}"
+										sizes="(max-width: 300px) 100vw, 300px" />
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-2df65b9 e-con-full e-flex e-con e-child"
+								data-id="2df65b9" data-element_type="container">
+								<div class="elementor-element elementor-element-427cdf4 elementor-widget elementor-widget-heading"
+									data-id="427cdf4" data-element_type="widget" data-widget_type="heading.default">
+									<div class="elementor-heading-title elementor-size-default">{{ $agent->user->name }}
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-10c7d8f elementor-widget elementor-widget-heading"
+									data-id="10c7d8f" data-element_type="widget" data-widget_type="heading.default">
+									<h6 class="elementor-heading-title elementor-size-default">{{ $agent->category->name }}</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="mt-3 elementor-element elementor-element-7c519e0 e-con-full animated-fast e-flex elementor-invisible e-con e-child col-md-4"
 					data-id="7c519e0" data-element_type="container"
 					data-settings="{&quot;animation&quot;:&quot;slideInUp&quot;}">
 					<div class="elementor-element elementor-element-8964603 elementor-widget elementor-widget-image"
